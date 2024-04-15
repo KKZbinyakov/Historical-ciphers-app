@@ -1,0 +1,10 @@
+bool mutual_simple(int a, int b);
+bool replacement_cipher_data_is_valid(std::string text, std::string key, std::string alphabet);
+bool affine_cipher_data_is_valid(std::string text, std::vector <int> key, std::string alphabet);
+bool affine_reccurent_cipher_data_is_valid(std::string text, std::vector <int> key, std::string alphabet);
+std::string simple_replacement_encryption(std::string text, std::string key, std::string alphabet);
+std::string simple_replacement_decryption(std::string ciphertext, std::string key, std::string alphabet);
+std::string affine_encryption(std::string text, std::vector <int> key, std::string alphabet);
+std::string affine_decryption(std::string ciphertext, std::vector <int> key, std::string alphabet);
+std::string affine_reccurent_encryption(std::string text, std::vector <int> key, std::string alphabet);
+std::string affine_reccurent_decryption(std::string ciphertext, std::vector <int> key, std::string alphabet);
