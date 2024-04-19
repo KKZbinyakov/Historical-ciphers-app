@@ -1,0 +1,32 @@
+[
+{
+  "directory": "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/external/doctest",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/doctest.dir/includes_CXX.rsp -O2 -g -DNDEBUG -std=gnu++11 -o CMakeFiles\\doctest.dir\\doctest.cpp.obj -c C:\\Users\\zkk26\\Desktop\\HSE\\Project\\Historical-ciphers-app\\external\\doctest\\doctest.cpp",
+  "file": "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/external/doctest/doctest.cpp",
+  "output": "external/doctest/CMakeFiles/doctest.dir/doctest.cpp.obj"
+},
+{
+  "directory": "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/Affine_ciphers_tests.dir/includes_CXX.rsp -O2 -g -DNDEBUG -std=gnu++20 -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -o CMakeFiles\\Affine_ciphers_tests.dir\\Affine_ciphers.cpp.obj -c C:\\Users\\zkk26\\Desktop\\HSE\\Project\\Historical-ciphers-app\\ciphers\\Affine_ciphers.cpp",
+  "file": "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/ciphers/Affine_ciphers.cpp",
+  "output": "ciphers/CMakeFiles/Affine_ciphers_tests.dir/Affine_ciphers.cpp.obj"
+},
+{
+  "directory": "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE  @CMakeFiles/Affine_ciphers_tests.dir/includes_CXX.rsp -O2 -g -DNDEBUG -std=gnu++20 -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -o CMakeFiles\\Affine_ciphers_tests.dir\\Affine_ciphers_tests.cpp.obj -c C:\\Users\\zkk26\\Desktop\\HSE\\Project\\Historical-ciphers-app\\ciphers\\Affine_ciphers_tests.cpp",
+  "file": "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/ciphers/Affine_ciphers_tests.cpp",
+  "output": "ciphers/CMakeFiles/Affine_ciphers_tests.dir/Affine_ciphers_tests.cpp.obj"
+},
+{
+  "directory": "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE   -O2 -g -DNDEBUG -std=gnu++20 -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -o CMakeFiles\\Affine_ciphers.dir\\Affine_ciphers.cpp.obj -c C:\\Users\\zkk26\\Desktop\\HSE\\Project\\Historical-ciphers-app\\ciphers\\Affine_ciphers.cpp",
+  "file": "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/ciphers/Affine_ciphers.cpp",
+  "output": "ciphers/CMakeFiles/Affine_ciphers.dir/Affine_ciphers.cpp.obj"
+},
+{
+  "directory": "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers",
+  "command": "C:\\PROGRA~1\\mingw64\\bin\\C__~1.EXE   -O2 -g -DNDEBUG -std=gnu++20 -Wall -Wextra -Wshadow -Wnon-virtual-dtor -Wold-style-cast -Wcast-align -Wunused -Woverloaded-virtual -Wpedantic -Wconversion -Wsign-conversion -Wnull-dereference -Wdouble-promotion -Wformat=2 -Wmisleading-indentation -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wuseless-cast -o CMakeFiles\\Affine_ciphers.dir\\main.cpp.obj -c C:\\Users\\zkk26\\Desktop\\HSE\\Project\\Historical-ciphers-app\\ciphers\\main.cpp",
+  "file": "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/ciphers/main.cpp",
+  "output": "ciphers/CMakeFiles/Affine_ciphers.dir/main.cpp.obj"
+}
+]

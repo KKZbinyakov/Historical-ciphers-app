@@ -1,0 +1,109 @@
+Start testing: Apr 19 15:36 RTZ 2 (çèìà)
+----------------------------------------------------------
+1/1 Testing: Affine_ciphers_tests
+1/1 Test: Affine_ciphers_tests
+Command: "C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers/Affine_ciphers_tests.exe" "--force-colors" "-d"
+Directory: C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers
+"Affine_ciphers_tests" start time: Apr 19 15:36 RTZ 2 (çèìà)
+Output:
+----------------------------------------------------------
+[doctest] doctest version is "2.4.11"
+[doctest] run with "--help" for options
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:18:
+TEST CASE:  Mutual simple numbers
+
+0.000005 s: Mutual simple numbers
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:23:
+TEST CASE:  Not mutual simple numbers
+
+0.000001 s: Not mutual simple numbers
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:28:
+TEST CASE:  Simple replacement key and and alphabet have not same length
+
+0.000942 s: Simple replacement key and and alphabet have not same length
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:33:
+TEST CASE:  Repeating symbol in alphabet
+
+0.000016 s: Repeating symbol in alphabet
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:39:
+TEST CASE:  Repeating symbol in key
+
+0.000007 s: Repeating symbol in key
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:44:
+TEST CASE:  Unknown symbol in the key
+
+0.000007 s: Unknown symbol in the key
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:49:
+TEST CASE:  Unknown symbol in the text
+
+0.000007 s: Unknown symbol in the text
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:54:
+TEST CASE:  Alphabet power and a-key are not mutual simple
+
+0.000018 s: Alphabet power and a-key are not mutual simple
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:59:
+TEST CASE:  Unknown symbol in the text
+
+0.000008 s: Unknown symbol in the text
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:64:
+TEST CASE:  Alphabet power and a-key are not mutual simple
+
+0.000203 s: Alphabet power and a-key are not mutual simple
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:69:
+TEST CASE:  Unknown symbol in the text
+
+0.000013 s: Unknown symbol in the text
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:74:
+TEST CASE:  Simple replacement encryption
+
+0.000012 s: Simple replacement encryption
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:79:
+TEST CASE:  Simple replacement decryption
+
+0.000009 s: Simple replacement decryption
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:84:
+TEST CASE:  Affine encryption
+
+0.000001 s: Affine encryption
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:89:
+TEST CASE:  Affine decryption
+
+0.000002 s: Affine decryption
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:94:
+TEST CASE:  Recurrent affine encryption
+
+0.000002 s: Recurrent affine encryption
+===============================================================================
+C:\Users\zkk26\Desktop\HSE\Project\Historical-ciphers-app\ciphers\Affine_ciphers_tests.cpp:99:
+TEST CASE:  Recurrent affine decryption
+
+0.000005 s: Recurrent affine decryption
+===============================================================================
+[doctest] test cases: 17 | 17 passed | 0 failed | 0 skipped
+[doctest] assertions: 17 | 17 passed | 0 failed |
+[doctest] Status: SUCCESS!
+<end of output>
+Test time =   0.10 sec
+----------------------------------------------------------
+Test Passed.
+"Affine_ciphers_tests" end time: Apr 19 15:36 RTZ 2 (çèìà)
+"Affine_ciphers_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 19 15:36 RTZ 2 (çèìà)

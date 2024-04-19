@@ -54,7 +54,7 @@ bool mutual_simple(int a, int b)
  * if alphabet contains two similar symbols or if key contains two similar symbols or
  * if key contains symbol that not in the alphabet or if text contains symbol that not in the alphabet
 */
-void replacement_cipher_data_is_valid(std::string text, std::string key, std::string alphabet)
+void replacement_cipher_data_is_valid(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     if (key.size() != alphabet.size())
     {
@@ -101,7 +101,7 @@ void replacement_cipher_data_is_valid(std::string text, std::string key, std::st
  * \throw input_data_invalid if the key and the power of alphabet are not mutual simple or
  * if  text contains symbol that not in the alphabet or if one or both of the keys are not digits
 */
-void affine_cipher_data_is_valid(std::string text, std::vector <int> key, std::string alphabet)
+void affine_cipher_data_is_valid(const std::string &text, const std::vector <int> &key, const std::string &alphabet)
 {
     int alphabet_power = alphabet.size();
     if (mutual_simple(key[0], alphabet_power) == 0)
@@ -127,7 +127,7 @@ void affine_cipher_data_is_valid(std::string text, std::vector <int> key, std::s
  * \throw input_data_invalid if the key and the power of alphabet are not mutual simple or
  * if  text contains symbol that not in the alphabet
 */
-void affine_reccurent_cipher_data_is_valid(std::string text, std::vector <int> key, std::string alphabet)
+void affine_reccurent_cipher_data_is_valid(const std::string &text, const std::vector <int> &key, const std::string &alphabet)
 {
     int alphabet_power = alphabet.size();
     if ((mutual_simple(key[0], alphabet_power) && mutual_simple(key[1], alphabet_power)) == 0)
@@ -154,7 +154,7 @@ void affine_reccurent_cipher_data_is_valid(std::string text, std::vector <int> k
  *
  * \return Encrypted text, error message if error occured
 */
-std::string simple_replacement_encryption(std::string text, std::string key, std::string alphabet)
+std::string simple_replacement_encryption(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     try
     {
@@ -183,7 +183,7 @@ std::string simple_replacement_encryption(std::string text, std::string key, std
  *
  * \return Decrypted text, error message if error occured
 */
-std::string simple_replacement_decryption(std::string ciphertext, std::string key, std::string alphabet)
+std::string simple_replacement_decryption(const std::string &ciphertext, const std::string &key, const std::string &alphabet)
 {
     try
     {
@@ -215,7 +215,7 @@ std::string simple_replacement_decryption(std::string ciphertext, std::string ke
  *
  * \return Encrypted text, error message if error occured
 */
-std::string affine_encryption(std::string text, std::vector <int> key, std::string alphabet){ // Key look like [a, b]
+std::string affine_encryption(const std::string &text, const std::vector <int> &key, const std::string &alphabet){ // Key look like [a, b]
     try
     {
         affine_cipher_data_is_valid(text, key, alphabet);
@@ -248,7 +248,7 @@ std::string affine_encryption(std::string text, std::vector <int> key, std::stri
  *
  * \return Encrypted text, error message if error occured
 */
-std::string affine_decryption(std::string ciphertext, std::vector <int> key, std::string alphabet)
+std::string affine_decryption(const std::string &ciphertext, const std::vector <int> &key, const std::string &alphabet)
 {
     try
     {
@@ -292,7 +292,7 @@ std::string affine_decryption(std::string ciphertext, std::vector <int> key, std
  *
  * \return Encrypted text, error message if error occured
 */
-std::string affine_reccurent_encryption(std::string text, std::vector <int> key, std::string alphabet)
+std::string affine_reccurent_encryption(const std::string &text, const std::vector <int> &key, const std::string &alphabet)
 {
     try
     {
@@ -337,7 +337,7 @@ std::string affine_reccurent_encryption(std::string text, std::vector <int> key,
  *
  * \return Encrypted text, error message if error occured
 */
-std::string affine_reccurent_decryption(std::string ciphertext, std::vector <int> key, std::string alphabet)
+std::string affine_reccurent_decryption(const std::string &ciphertext, const std::vector <int> &key, const std::string &alphabet)
 {
     try
     {

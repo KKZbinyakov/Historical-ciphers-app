@@ -1,0 +1,12 @@
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/CMakeFiles/test.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/CMakeFiles/edit_cache.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/CMakeFiles/rebuild_cache.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/external/doctest/CMakeFiles/doctest.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/external/doctest/CMakeFiles/test.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/external/doctest/CMakeFiles/edit_cache.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/external/doctest/CMakeFiles/rebuild_cache.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers/CMakeFiles/Affine_ciphers_tests.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers/CMakeFiles/Affine_ciphers.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers/CMakeFiles/test.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers/CMakeFiles/edit_cache.dir
+C:/Users/zkk26/Desktop/HSE/Project/Historical-ciphers-app/build/ciphers/CMakeFiles/rebuild_cache.dir

@@ -1,3 +1,7 @@
+#include <vector>
+#include <string>
+#include <iostream>
+#include <algorithm>
 
 /**
  * \file Affine_ciphers.hpp
@@ -30,12 +34,12 @@ public:
 };
 
 bool mutual_simple(int a, int b);
-void replacement_cipher_data_is_valid(std::string text, std::string key, std::string alphabet);
-void affine_cipher_data_is_valid(std::string text, std::vector <int> key, std::string alphabet);
-void affine_reccurent_cipher_data_is_valid(std::string text, std::vector <int> key, std::string alphabet);
-std::string simple_replacement_encryption(std::string text, std::string key, std::string alphabet);
-std::string simple_replacement_decryption(std::string ciphertext, std::string key, std::string alphabet);
-std::string affine_encryption(std::string text, std::vector <int> key, std::string alphabet);
-std::string affine_decryption(std::string ciphertext, std::vector <int> key, std::string alphabet);
-std::string affine_reccurent_encryption(std::string text, std::vector <int> key, std::string alphabet);
-std::string affine_reccurent_decryption(std::string ciphertext, std::vector <int> key, std::string alphabet);
+void replacement_cipher_data_is_valid(const std::string &text, const std::string &key, const std::string &alphabet);
+void affine_cipher_data_is_valid(const std::string &text, const std::vector <int> &key, const std::string &alphabet);
+void affine_reccurent_cipher_data_is_valid(const std::string &text, const std::vector <int> &key, const std::string &alphabet);
+std::string simple_replacement_encryption(const std::string &text, const std::string &key, const std::string &alphabet);
+std::string simple_replacement_decryption(const std::string &ciphertext, const std::string &key, const std::string &alphabet);
+std::string affine_encryption(const std::string &text, const std::vector <int> &key, const std::string &alphabet);
+std::string affine_decryption(const std::string &ciphertext, const std::vector <int> &key, const std::string &alphabet);
+std::string affine_reccurent_encryption(const std::string &text, const std::vector <int> &key, const std::string &alphabet);
+std::string affine_reccurent_decryption(const std::string &ciphertext, const std::vector <int> &key, const std::string &alphabet);
