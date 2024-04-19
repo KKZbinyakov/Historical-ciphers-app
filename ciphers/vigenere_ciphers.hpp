@@ -28,12 +28,12 @@ class input_data_invalid: public std::exception
     }
 };
 
-void vigenere_data_is_valid(std::string const &text, std::string const &key, std::string const &alphabet);
-std::string repeat_key_ciphering(std::string const &text, std::string const &key, std::string const &alphabet);
-std::string repeat_key_deciphering(std::string const &ciphertext, std::string const &key, std::string const &alphabet);
-std::string self_open_key_ciphering(std::string const &text, std::string const &key, std::string const &alphabet);
-std::string self_open_key_deciphering(std::string const &ciphertext, std::string const &key, std::string const &alphabet);
-std::string self_cipher_key_ciphering(std::string const &text, std::string const &key, std::string const &alphabet);
-std::string self_cipher_key_deciphering(std::string const &ciphertext, std::string const &key, std::string const &alphabet);
+void vigenere_data_is_valid(const std::string &text, const std::string &key, const std::string &alphabet);
+std::string repeat_key_ciphering(const std::string &text, const std::string &key, const std::string &alphabet);
+std::string repeat_key_deciphering(const std::string &ciphertext, const std::string &key, const std::string &alphabet);
+std::string self_open_key_ciphering(const std::string &text, const std::string &key, const std::string &alphabet);
+std::string self_open_key_deciphering(const std::string &ciphertext, const std::string &key, const std::string &alphabet);
+std::string self_cipher_key_ciphering(const std::string &text, const std::string &key, const std::string &alphabet);
+std::string self_cipher_key_deciphering(const std::string &ciphertext, const std::string &key, const std::string &alphabet);
 
 #endif
