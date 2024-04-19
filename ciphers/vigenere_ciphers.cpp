@@ -22,7 +22,7 @@
  * 
  * \throw input_data_invalid with the suitable message in case of wrong alphabet, wrong key or wrong text.
 */
-void vigenere_data_is_valid(std::string const &text, std::string const &key, std::string const &alphabet)
+void vigenere_data_is_valid(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     for (char c : alphabet)
     {
@@ -59,7 +59,7 @@ void vigenere_data_is_valid(std::string const &text, std::string const &key, std
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
 */
-std::string repeat_key_ciphering(std::string const &text, std::string const &key, std::string const &alphabet)
+std::string repeat_key_ciphering(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     try{
         vigenere_data_is_valid(text, key, alphabet);
@@ -91,7 +91,7 @@ std::string repeat_key_ciphering(std::string const &text, std::string const &key
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
 */
-std::string repeat_key_deciphering(std::string const &ciphertext, std::string const &key, std::string const &alphabet)
+std::string repeat_key_deciphering(const std::string &ciphertext, const std::string &key, const std::string &alphabet)
 {
     try
     {
@@ -123,7 +123,7 @@ std::string repeat_key_deciphering(std::string const &ciphertext, std::string co
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
 */
-std::string self_open_key_ciphering(std::string const &text, std::string const &key, std::string const &alphabet)
+std::string self_open_key_ciphering(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     try
     {
@@ -155,7 +155,7 @@ std::string self_open_key_ciphering(std::string const &text, std::string const &
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
 */
-std::string self_open_key_deciphering(std::string const &ciphertext, std::string const &key, std::string const &alphabet)
+std::string self_open_key_deciphering(const std::string &ciphertext, const std::string &key, const std::string &alphabet)
 {
     try
     {
@@ -188,7 +188,7 @@ std::string self_open_key_deciphering(std::string const &ciphertext, std::string
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
 */
-std::string self_cipher_key_ciphering(std::string const &text, std::string const &key, std::string const &alphabet)
+std::string self_cipher_key_ciphering(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     try
     {
@@ -221,7 +221,7 @@ std::string self_cipher_key_ciphering(std::string const &text, std::string const
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
 */
-std::string self_cipher_key_deciphering(std::string const &ciphertext, std::string const &key, std::string const &alphabet)
+std::string self_cipher_key_deciphering(const std::string &ciphertext, const std::string &key, const std::string &alphabet)
 {
     try
     {
