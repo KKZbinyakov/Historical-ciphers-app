@@ -9,10 +9,15 @@
 /**
  * \file magma_cipher.hpp
  *
- * This file contains magma class with all methods, exception class, and definition all of functions
+ * This file contains magma class with all methods, exception classes, and definition all of functions
  *
 */
 
+
+/**
+*  \class exception is basic exception class created to inherit other exception classes from it
+*
+*/
 class exception
 {
 public:
@@ -23,27 +28,52 @@ public:
     virtual const char* what() const noexcept;
 };
 
+/**
+* \class input_data_invalid is exception class to process exceptions caused by invalid input data
+*
+*
+*/
 class input_data_invalid: public std::exception
 {
 public:
-    std::string message;
+    std::string message; ///<message is description of error and the reasons that could cause it
+
+    /**
+    * Constructor of input data invalid object
+    *
+    * \param[in] _message is the text of the error
+    *
+    */
     input_data_invalid(const std::string& _message){
         message = _message;
     }
+
+    /**
+    * Function returns error text when calling this class object
+    *
+    * \return string interpretation for class parameter of error
+    *
+    */
     const char* what() const noexcept override
     {
         return message.c_str();
     }
 };
 
+
+/**
+* A class which contains parameters of magma cipher algorithm, classic S-box replacement table,
+* encryption and decryption functions, and as auxiliary functions for them
+*
+*/
 class Magma {
 public:
-    static const size_t BLOCK_SIZE = 8;  // 64-bit blocks
-    static const size_t KEY_SIZE = 32;   // 256-bit key
-    static const size_t NUM_ROUNDS = 32; // Number of rounds
+    static const size_t BLOCK_SIZE = 8;  ///<BLOCK_SIZE is the size of the block into which the data was split for processing
+    static const size_t KEY_SIZE = 32;   ///<KEY_SIZE is the size of the key using for encryption
+    static const size_t NUM_ROUNDS = 32; ///<NUM_ROUNDS is the number of encryption rounds accepted in this algorithm
 
-    using Block = std::array<uint8_t, BLOCK_SIZE>;
-    using Key = std::array<uint8_t, KEY_SIZE>;
+    using Block = std::array<uint8_t, BLOCK_SIZE>; ///<Block is class object alias for array of uint8 numbers
+    using Key = std::array<uint8_t, KEY_SIZE>; ///<Key is class object alias for array of uint8 numbers
 
 private:
     // Classic S-box table for GOST 28147-89
@@ -56,16 +86,34 @@ private:
         {0x5, 0xD, 0xF, 0x6, 0x9, 0x2, 0xC, 0xA, 0xB, 0x7, 0x8, 0x1, 0x4, 0x3, 0xE, 0x0},
         {0x8, 0xE, 0x2, 0x5, 0x6, 0x9, 0x1, 0xC, 0xF, 0x4, 0xB, 0x0, 0xD, 0xA, 0x3, 0x7},
         {0x1, 0x7, 0xE, 0xD, 0x0, 0x5, 0x8, 0x3, 0x4, 0xF, 0xA, 0x6, 0x9, 0xC, 0xB, 0x2}
-    }};
+    }}; ///<sBox is the substitution table selected for our cipher
 
-    std::array<uint32_t, 8> keySchedule;
-    // Splitting key into eight sub-keys
+    std::array<uint32_t, 8> keySchedule; ///<representation of the key in the form of array of eight numbers uint8
+
+    /**
+     * The method performs splitting key into eight sub-keys for more convenient submission of it to the input of subsequent algorithms
+     *
+     * \param[in] Key is not-splitted key
+     *
+    */
     void generateKeySchedule(const Key& key) {
         for (size_t i = 0; i < 8; ++i) {
             keySchedule[i] = (key[4 * i] << 24) | (key[4 * i + 1] << 16) | (key[4 * i + 2] << 8) | key[4 * i + 3];
         }
     }
-    // Mixing according to S-box
+
+    /**
+     * The method performs transformation of a half-block using the part of the key and mixing it according to generally accepted S-box.
+     * After that eleven bit left shift is being made
+     *
+     * \param[in] halfBlock is half of a block of encrypted or decrypted data. It consists of four uint8 numbers and
+     * it is submitted to the input in uint32 format
+     * \param[in] roundKey is a part of the key which is used in this round of encryption. It consists of four uint8 numbers and
+     * it is submitted to the input in uint32 format
+     *
+     * \return part of data after mixing and transformation
+     *
+    */
     uint32_t f(uint32_t halfBlock, uint32_t roundKey) const {
         uint32_t temp = halfBlock + roundKey;
         uint8_t output[4];
@@ -79,6 +127,13 @@ private:
         return (temp << 11) | (temp >> (32 - 11)); // left rotation by 11 bits
     }
 
+    /**
+     * The method performs encryption of one block using magma algorithm and calling f function
+     *
+     * \param[in] block is block for encryption in format of Block
+     *
+     * \return block after encryption in format of Block
+    */
     Block encryptBlock(const Block& block) const {
         uint32_t left = (block[0] << 24) | (block[1] << 16) | (block[2] << 8) | block[3];
         uint32_t right = (block[4] << 24) | (block[5] << 16) | (block[6] << 8) | block[7];
@@ -94,6 +149,13 @@ private:
         return encryptedBlock;
     }
 
+    /**
+     * The method performs decryption of one block using magma algorithm and calling f function
+     *
+     * \param[in] block is block for decryption, eight uint8 numbers in array
+     *
+     * \return block after decryption
+    */
     Block decryptBlock(const Block& block) const {
         uint32_t left = (block[0] << 24) | (block[1] << 16) | (block[2] << 8) | block[3];
         uint32_t right = (block[4] << 24) | (block[5] << 16) | (block[6] << 8) | block[7];
@@ -109,6 +171,16 @@ private:
         return decryptedBlock;
     }
 
+    /**
+     * The method performs building of gamma according to synchrolink
+     *
+     * \param[in] block is block for decryption, eight uint8 numbers in array
+     *
+     * \param[in] dataSize is integer length of encrypted data in bits
+     *
+     * \return builded gamma
+     *
+     */
     std::vector<uint8_t> gammaBuilding(const Block& synchroLink, size_t dataSize) {
         std::vector<uint8_t> gamma(dataSize);
         Block cipheredLink = encryptBlock(synchroLink);
@@ -134,6 +206,16 @@ private:
         return gamma;
     }
 
+    /**
+     * The method performs building of gamma using feedback algorithm according to data for encryption and synchrolink
+     *
+     * \param[in] block for decryption, eight uint8 numbers in array
+     *
+     * \param[in] data for encryption, vector of uint8 numbers
+     *
+     * \return builded gamma
+     *
+     */
     std::vector<uint8_t> feedbackGammaBuilding(const Block& synchroLink, const std::vector<uint8_t>& data) {
         size_t dataSize = data.size();
         std::vector<uint8_t> gamma(dataSize);
@@ -157,14 +239,32 @@ private:
 public:
     Magma() = default;
 
+    /**
+    * Constructor of Magma object
+    *
+    * \param[in] key for encryption
+    *
+    */
     explicit Magma(const Key& key) {
         setKey(key);
     }
 
+    /**
+    * The method performs splitting key into eight sub-keys
+    *
+    * \param[in] key for splitting
+    *
+    */
     void setKey(const Key& key) {
         generateKeySchedule(key);
     }
-    // Union cutted key into key
+
+    /**
+    * The method performs union key from eight sub-keys
+    *
+    * \param[in] key for union
+    *
+    */
     Key getKey() const {
         Key key;
         for (size_t i = 0; i < 8; ++i) {
@@ -176,6 +276,14 @@ public:
         return key;
     }
 
+    /**
+    * The method performs data encryption using magma simple replacement algorithm. Every block is only processed using the f function
+    *
+    * \param[in] data for encryption
+    *
+    * \return encrypted data
+    *
+    */
     std::vector<uint8_t> encrypt(const std::vector<uint8_t>& data) const {
         size_t dataSize = data.size();
         size_t paddedSize = ((dataSize + BLOCK_SIZE - 1) / BLOCK_SIZE) * BLOCK_SIZE; // Correction for an incomplete block
@@ -194,6 +302,14 @@ public:
         return encryptedData;
     }
 
+    /**
+    * The method performs data decryption using magma simple replacement algorithm. Every block is only processed using the f function
+    *
+    * \param[in] data for decryption
+    *
+    * \return decrypted data
+    *
+    */
     std::vector<uint8_t> decrypt(const std::vector<uint8_t>& data) const {
         size_t dataSize = data.size();
         std::vector<uint8_t> decryptedData(dataSize);
@@ -208,6 +324,16 @@ public:
         return decryptedData;
     }
 
+    /**
+    * The method performs data encryption and decryption using magma gamming replacement algorithm.
+    * Addition modulo two is applied between each block of data and pre-calculated gamma
+    *
+    * \param[in] data for encryption
+    * \param[in] input key analog in the format of a vector of numbers of type uint8
+    *
+    * \return encrypted data
+    *
+    */
     std::vector<uint8_t> gammaAlgorithm(const std::vector<uint8_t>& data, const Block& synchroLink) {
         size_t dataSize = data.size();
         std::vector<uint8_t> gamma = gammaBuilding(synchroLink, dataSize);
@@ -218,6 +344,16 @@ public:
         return encryptedData;
     }
 
+    /**
+    * The method performs data encryption and decryption using magma feedback gamming replacement algorithm.
+    * Addition modulo two is applied between each block of data and pre-calculated gamma
+    *
+    * \param[in] data for encryption
+    * \param[in] input key analog in the format of a vector of numbers of type uint8
+    *
+    * \return encrypted data
+    *
+    */
     std::vector<uint8_t> feedbackGammaAlgorithm(const std::vector<uint8_t>& data, const Block& synchroLink) {
         std::vector<uint8_t> gamma = feedbackGammaBuilding(synchroLink, data);
         return gamma;
