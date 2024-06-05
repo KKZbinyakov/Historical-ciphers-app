@@ -6,10 +6,14 @@
 /**
  * \file Affine_ciphers.hpp
  *
- * This file contains exception class, and definition all of functions
+ * This file contains exception classes, and definition all of functions
  *
 */
 
+/**
+*  \class exception is basic exception class created to inherit other exception classes from it
+*
+*/
 class exception
 {
 public:
@@ -20,6 +24,11 @@ public:
     virtual const char* what() const noexcept;
 };
 
+/**
+* \class input_data_invalid is exception class to process exceptions caused by invalid input data
+*
+*
+*/
 class input_data_invalid: public std::exception
 {
 public:

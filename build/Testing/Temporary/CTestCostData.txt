@@ -1,2 +1,0 @@
-Affine_ciphers_tests 1 0.104952
----
