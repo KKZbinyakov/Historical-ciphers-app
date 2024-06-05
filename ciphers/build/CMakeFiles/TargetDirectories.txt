@@ -1,0 +1,4 @@
+C:/AiP/Proj/Historical-ciphers-app/ciphers/build/CMakeFiles/vigenere_ciphers_tests.dir
+C:/AiP/Proj/Historical-ciphers-app/ciphers/build/CMakeFiles/vigenere_ciphers.dir
+C:/AiP/Proj/Historical-ciphers-app/ciphers/build/CMakeFiles/edit_cache.dir
+C:/AiP/Proj/Historical-ciphers-app/ciphers/build/CMakeFiles/rebuild_cache.dir

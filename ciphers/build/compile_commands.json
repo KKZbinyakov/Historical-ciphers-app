@@ -1,0 +1,26 @@
+[
+{
+  "directory": "C:/AiP/Proj/Historical-ciphers-app/ciphers/build",
+  "command": "C:\\Users\\Admin\\gcc\\bin\\c++.exe -g -o CMakeFiles\\vigenere_ciphers_tests.dir\\vigenere_ciphers_tests.cpp.obj -c C:\\AiP\\Proj\\Historical-ciphers-app\\ciphers\\vigenere_ciphers_tests.cpp",
+  "file": "C:\\AiP\\Proj\\Historical-ciphers-app\\ciphers\\vigenere_ciphers_tests.cpp",
+  "output": "CMakeFiles\\vigenere_ciphers_tests.dir\\vigenere_ciphers_tests.cpp.obj"
+},
+{
+  "directory": "C:/AiP/Proj/Historical-ciphers-app/ciphers/build",
+  "command": "C:\\Users\\Admin\\gcc\\bin\\c++.exe -g -o CMakeFiles\\vigenere_ciphers_tests.dir\\vigenere_ciphers.cpp.obj -c C:\\AiP\\Proj\\Historical-ciphers-app\\ciphers\\vigenere_ciphers.cpp",
+  "file": "C:\\AiP\\Proj\\Historical-ciphers-app\\ciphers\\vigenere_ciphers.cpp",
+  "output": "CMakeFiles\\vigenere_ciphers_tests.dir\\vigenere_ciphers.cpp.obj"
+},
+{
+  "directory": "C:/AiP/Proj/Historical-ciphers-app/ciphers/build",
+  "command": "C:\\Users\\Admin\\gcc\\bin\\c++.exe -g -o CMakeFiles\\vigenere_ciphers.dir\\vigenere_ciphers.cpp.obj -c C:\\AiP\\Proj\\Historical-ciphers-app\\ciphers\\vigenere_ciphers.cpp",
+  "file": "C:\\AiP\\Proj\\Historical-ciphers-app\\ciphers\\vigenere_ciphers.cpp",
+  "output": "CMakeFiles\\vigenere_ciphers.dir\\vigenere_ciphers.cpp.obj"
+},
+{
+  "directory": "C:/AiP/Proj/Historical-ciphers-app/ciphers/build",
+  "command": "C:\\Users\\Admin\\gcc\\bin\\c++.exe -g -o CMakeFiles\\vigenere_ciphers.dir\\main.cpp.obj -c C:\\AiP\\Proj\\Historical-ciphers-app\\ciphers\\main.cpp",
+  "file": "C:\\AiP\\Proj\\Historical-ciphers-app\\ciphers\\main.cpp",
+  "output": "CMakeFiles\\vigenere_ciphers.dir\\main.cpp.obj"
+}
+]

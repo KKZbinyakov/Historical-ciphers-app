@@ -7,21 +7,19 @@
 
 /**
  * \file vigenere_ciphers.cpp
- * 
+ *
  * In that file we describe the functions of 3 types of vigenere cipherings and decipherings, namely short key gamma, self key from opentext and self key from ciphertext, and the validation function for them.
-*/
-
-
+ */
 
 /**
  * The validation function for Vigenere ciphers.
- * 
+ *
  * \param[in] text The text we want to encrypt or decrypt with some of Vigenere ciphers.
  * \param[in] key The key for Vigenere ciphering.
  * \param[in] alphabet The alphabet of Vigenere ciphering.
- * 
+ *
  * \throw input_data_invalid with the suitable message in case of wrong alphabet, wrong key or wrong text.
-*/
+ */
 void vigenere_data_is_valid(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     for (char c : alphabet)
@@ -51,17 +49,18 @@ void vigenere_data_is_valid(const std::string &text, const std::string &key, con
 
 /**
  * The function of Vigenere ciphering with gamma formed with repeating short key.
- * 
+ *
  * \param[in] text The text we want to encrypt or decrypt with some of Vigenere ciphers.
  * \param[in] key The key for Vigenere ciphering.
  * \param[in] alphabet The alphabet of Vigenere ciphering.
- * 
+ *
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
-*/
+ */
 std::string repeat_key_ciphering(const std::string &text, const std::string &key, const std::string &alphabet)
 {
-    try{
+    try
+    {
         vigenere_data_is_valid(text, key, alphabet);
         std::string cipher{""};
         long long len_alph{alphabet.size()};
@@ -72,25 +71,23 @@ std::string repeat_key_ciphering(const std::string &text, const std::string &key
             cipher += alphabet[(point + gam) % len_alph];
         }
         return cipher;
-
     }
     catch (input_data_invalid error)
     {
         return error.message;
-    }   
+    }
 }
-
 
 /**
  * The function of Vigenere ciphering with gamma formed with repeating short key.
- * 
+ *
  * \param[in] text The text we want to encrypt or decrypt with some of Vigenere ciphers.
  * \param[in] key The key for Vigenere ciphering.
  * \param[in] alphabet The alphabet of Vigenere ciphering.
- * 
+ *
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
-*/
+ */
 std::string repeat_key_deciphering(const std::string &ciphertext, const std::string &key, const std::string &alphabet)
 {
     try
@@ -106,23 +103,22 @@ std::string repeat_key_deciphering(const std::string &ciphertext, const std::str
         }
         return decipher;
     }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
 }
 
-
 /**
  * The function of Vigenere ciphering with gamma formed with selfkey from opentext.
- * 
+ *
  * \param[in] text The text we want to encrypt or decrypt with some of Vigenere ciphers.
  * \param[in] key The key for Vigenere ciphering.
  * \param[in] alphabet The alphabet of Vigenere ciphering.
- * 
+ *
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
-*/
+ */
 std::string self_open_key_ciphering(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     try
@@ -139,7 +135,7 @@ std::string self_open_key_ciphering(const std::string &text, const std::string &
         }
         return cipher;
     }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -147,14 +143,14 @@ std::string self_open_key_ciphering(const std::string &text, const std::string &
 
 /**
  * The function of Vigenere deciphering with gamma formed with selfkey from with opentext.
- * 
+ *
  * \param[in] text The text we want to encrypt or decrypt with some of Vigenere ciphers.
  * \param[in] key The key for Vigenere ciphering.
  * \param[in] alphabet The alphabet of Vigenere ciphering.
- * 
+ *
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
-*/
+ */
 std::string self_open_key_deciphering(const std::string &ciphertext, const std::string &key, const std::string &alphabet)
 {
     try
@@ -172,7 +168,7 @@ std::string self_open_key_deciphering(const std::string &ciphertext, const std::
         }
         return decipher;
     }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -180,14 +176,14 @@ std::string self_open_key_deciphering(const std::string &ciphertext, const std::
 
 /**
  * The function of Vigenere ciphering with gamma formed with selfkey from with ciphertext.
- * 
+ *
  * \param[in] text The text we want to encrypt or decrypt with some of Vigenere ciphers.
  * \param[in] key The key for Vigenere ciphering.
  * \param[in] alphabet The alphabet of Vigenere ciphering.
- * 
+ *
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
-*/
+ */
 std::string self_cipher_key_ciphering(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     try
@@ -205,7 +201,7 @@ std::string self_cipher_key_ciphering(const std::string &text, const std::string
         }
         return cipher;
     }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -213,14 +209,14 @@ std::string self_cipher_key_ciphering(const std::string &text, const std::string
 
 /**
  * The function of Vigenere deciphering with gamma formed with selfkey from the ciphertext.
- * 
+ *
  * \param[in] text The text we want to encrypt or decrypt with some of Vigenere ciphers.
  * \param[in] key The key for Vigenere ciphering.
  * \param[in] alphabet The alphabet of Vigenere ciphering.
- * 
+ *
  * \return ciphertext for that input data if data is correct.
  * \return error message if data is incorrect.
-*/
+ */
 std::string self_cipher_key_deciphering(const std::string &ciphertext, const std::string &key, const std::string &alphabet)
 {
     try
@@ -237,7 +233,7 @@ std::string self_cipher_key_deciphering(const std::string &ciphertext, const std
         }
         return decipher;
     }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
