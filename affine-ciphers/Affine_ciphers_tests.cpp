@@ -6,14 +6,12 @@
 #include "doctest.h"
 #include "Affine_ciphers.hpp"
 
-
 /**
  * \file Affine_ciphers_tests.cpp
  *
  * This file contains affine ciphers testing for errors, ciphering and deciphering results
  *
-*/
-
+ */
 
 TEST_CASE("Mutual simple numbers")
 {
@@ -27,13 +25,12 @@ TEST_CASE("Not mutual simple numbers")
 
 TEST_CASE("Simple replacement key and and alphabet have not same length")
 {
-	CHECK_THROWS_WITH(replacement_cipher_data_is_valid("", "ABCDE", "ABCDEF"), "Key and alphabet should have equal length. Please, try again");
+    CHECK_THROWS_WITH(replacement_cipher_data_is_valid("", "ABCDE", "ABCDEF"), "Key and alphabet should have equal length. Please, try again");
 }
 
 TEST_CASE("Repeating symbol in alphabet")
 {
     CHECK_THROWS_WITH(replacement_cipher_data_is_valid("", "ABCDEF", "ABCDFF"), "Alphabet contains repeating symbol. Please, try again");
-
 }
 
 TEST_CASE("Repeating symbol in key")
@@ -100,4 +97,3 @@ TEST_CASE("Recurrent affine decryption")
 {
     CHECK(affine_reccurent_decryption("kponuzhkwn", {3, 7, 11, 13}, "abcdefghijklmnopqrstuvwxyz") == "recurrence");
 }
-

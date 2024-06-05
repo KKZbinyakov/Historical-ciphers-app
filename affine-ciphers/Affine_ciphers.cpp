@@ -1,7 +1,3 @@
-#include <vector>
-#include <string>
-#include <iostream>
-#include <algorithm>
 #include "Affine_ciphers.hpp"
 
 /**
@@ -9,7 +5,7 @@
  *
  * This file contains affine ciphers encryption and decryption functions
  *
-*/
+ */
 
 /**
  * The function checks whether two numbers are mutually prime
@@ -18,19 +14,19 @@
  * \param[in] b second number
  *
  * \return Boolean true if numbers are mutual simple, boolean false if they don't
-*/
+ */
 bool mutual_simple(int a, int b)
 {
     if (a > b)
     {
-        std::swap (a, b);
+        std::swap(a, b);
     }
     while (a * b != 0)
     {
         b = b - a;
         if (a > b)
         {
-        std::swap (a, b);
+            std::swap(a, b);
         }
     }
     if (a + b == 1)
@@ -53,32 +49,32 @@ bool mutual_simple(int a, int b)
  * \throw input_data_invalid if the key and the alphabet have different length or
  * if alphabet contains two similar symbols or if key contains two similar symbols or
  * if key contains symbol that not in the alphabet or if text contains symbol that not in the alphabet
-*/
+ */
 void replacement_cipher_data_is_valid(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     if (key.size() != alphabet.size())
     {
-        throw input_data_invalid("Key and alphabet should have equal length. Please, try again"); //Key-alphabet size error
+        throw input_data_invalid("Key and alphabet should have equal length. Please, try again"); // Key-alphabet size error
     }
     for (char c : alphabet)
     {
         if (count(alphabet.begin(), alphabet.end(), c) > 1)
         {
-            throw input_data_invalid("Alphabet contains repeating symbol. Please, try again"); //Alphabet letter repeat error
+            throw input_data_invalid("Alphabet contains repeating symbol. Please, try again"); // Alphabet letter repeat error
         }
     }
     for (char c : key)
     {
         if (count(key.begin(), key.end(), c) != 1)
         {
-            throw input_data_invalid("Key contains repeating symbol. Please, try again"); //Key letter repeat error
+            throw input_data_invalid("Key contains repeating symbol. Please, try again"); // Key letter repeat error
         }
     }
     for (char c : alphabet)
     {
         if (count(key.begin(), key.end(), c) != 1)
         {
-            throw input_data_invalid("Key contains symbol, which is not in alphabet. Please, try again"); //Key symbol unknown
+            throw input_data_invalid("Key contains symbol, which is not in alphabet. Please, try again"); // Key symbol unknown
         }
     }
 
@@ -86,7 +82,7 @@ void replacement_cipher_data_is_valid(const std::string &text, const std::string
     {
         if (count(alphabet.begin(), alphabet.end(), c) < 1)
         {
-            throw input_data_invalid("Text contains symbol, which is not in alphabet. Please, try again"); //Text symbol unknown
+            throw input_data_invalid("Text contains symbol, which is not in alphabet. Please, try again"); // Text symbol unknown
         }
     }
 }
@@ -100,19 +96,19 @@ void replacement_cipher_data_is_valid(const std::string &text, const std::string
  *
  * \throw input_data_invalid if the key and the power of alphabet are not mutual simple or
  * if  text contains symbol that not in the alphabet or if one or both of the keys are not digits
-*/
-void affine_cipher_data_is_valid(const std::string &text, const std::vector <int> &key, const std::string &alphabet)
+ */
+void affine_cipher_data_is_valid(const std::string &text, const std::vector<int> &key, const std::string &alphabet)
 {
     int alphabet_power = alphabet.size();
     if (mutual_simple(key[0], alphabet_power) == 0)
     {
-        throw input_data_invalid("Alphabet power and a-key should be mutual simple. Please, try again"); //Mutual simple error
+        throw input_data_invalid("Alphabet power and a-key should be mutual simple. Please, try again"); // Mutual simple error
     }
     for (char c : text)
     {
         if (count(alphabet.begin(), alphabet.end(), c) < 1)
         {
-            throw input_data_invalid("Text contains symbol, which is not in alphabet. Please, try again"); //Unknown symbol error
+            throw input_data_invalid("Text contains symbol, which is not in alphabet. Please, try again"); // Unknown symbol error
         }
     }
 }
@@ -126,19 +122,19 @@ void affine_cipher_data_is_valid(const std::string &text, const std::vector <int
  *
  * \throw input_data_invalid if the key and the power of alphabet are not mutual simple or
  * if  text contains symbol that not in the alphabet
-*/
-void affine_reccurent_cipher_data_is_valid(const std::string &text, const std::vector <int> &key, const std::string &alphabet)
+ */
+void affine_reccurent_cipher_data_is_valid(const std::string &text, const std::vector<int> &key, const std::string &alphabet)
 {
     int alphabet_power = alphabet.size();
     if ((mutual_simple(key[0], alphabet_power) && mutual_simple(key[1], alphabet_power)) == 0)
     {
-        throw ("Alphabet power and a-keys should be mutual simple. Please, try again"); //Mutual simple error
+        throw("Alphabet power and a-keys should be mutual simple. Please, try again"); // Mutual simple error
     }
     for (char c : text)
     {
         if (count(alphabet.begin(), alphabet.end(), c) < 1)
         {
-            throw input_data_invalid("Text contains symbol, which is not in alphabet. Please, try again"); //Unknown symbol error
+            throw input_data_invalid("Text contains symbol, which is not in alphabet. Please, try again"); // Unknown symbol error
         }
     }
 }
@@ -153,7 +149,7 @@ void affine_reccurent_cipher_data_is_valid(const std::string &text, const std::v
  * \param[in] alphabet is string, that contains all symbols, which can be used in input text
  *
  * \return Encrypted text, error message if error occured
-*/
+ */
 std::string simple_replacement_encryption(const std::string &text, const std::string &key, const std::string &alphabet)
 {
     try
@@ -166,7 +162,7 @@ std::string simple_replacement_encryption(const std::string &text, const std::st
         }
         return ciphertext;
     }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -182,7 +178,7 @@ std::string simple_replacement_encryption(const std::string &text, const std::st
  * \param[in] alphabet is string, that contains all symbols, which can be used in input text
  *
  * \return Decrypted text, error message if error occured
-*/
+ */
 std::string simple_replacement_decryption(const std::string &ciphertext, const std::string &key, const std::string &alphabet)
 {
     try
@@ -195,7 +191,7 @@ std::string simple_replacement_decryption(const std::string &ciphertext, const s
         }
         return text;
     }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -214,8 +210,9 @@ std::string simple_replacement_decryption(const std::string &ciphertext, const s
  * \param[in] alphabet is string, that contains all symbols, which can be used in input text
  *
  * \return Encrypted text, error message if error occured
-*/
-std::string affine_encryption(const std::string &text, const std::vector <int> &key, const std::string &alphabet){ // Key look like [a, b]
+ */
+std::string affine_encryption(const std::string &text, const std::vector<int> &key, const std::string &alphabet)
+{ // Key look like [a, b]
     try
     {
         affine_cipher_data_is_valid(text, key, alphabet);
@@ -227,7 +224,7 @@ std::string affine_encryption(const std::string &text, const std::vector <int> &
         }
         return ciphertext;
     }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -247,8 +244,8 @@ std::string affine_encryption(const std::string &text, const std::vector <int> &
  * \param[in] alphabet is string, that contains all symbols, which can be used in input text
  *
  * \return Encrypted text, error message if error occured
-*/
-std::string affine_decryption(const std::string &ciphertext, const std::vector <int> &key, const std::string &alphabet)
+ */
+std::string affine_decryption(const std::string &ciphertext, const std::vector<int> &key, const std::string &alphabet)
 {
     try
     {
@@ -263,13 +260,14 @@ std::string affine_decryption(const std::string &ciphertext, const std::vector <
                 inverse_alpha = i;
             }
         }
-        for (char c : ciphertext){
+        for (char c : ciphertext)
+        {
             int index = alphabet.find(c);
             text += alphabet[(((index - key[1]) * inverse_alpha) % alphabet_power + alphabet_power) % alphabet_power];
         }
         return text;
     }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -291,30 +289,30 @@ std::string affine_decryption(const std::string &ciphertext, const std::vector <
  * \param[in] alphabet is string, that contains all symbols, which can be used in input text
  *
  * \return Encrypted text, error message if error occured
-*/
-std::string affine_reccurent_encryption(const std::string &text, const std::vector <int> &key, const std::string &alphabet)
+ */
+std::string affine_reccurent_encryption(const std::string &text, const std::vector<int> &key, const std::string &alphabet)
 {
     try
     {
-    affine_reccurent_cipher_data_is_valid(text, key, alphabet);
-    std::string ciphertext = "";
-    int text_size = text.size();
-    int alphabet_power = alphabet.size();
-    std::vector <int> a_keys{key[0], key[1]};
-    std::vector <int> b_keys{key[2], key[3]};
-    for (int i{1}; i <= text_size - 2; i++)
-    {
-        a_keys.push_back((a_keys[i-1] * a_keys[i]) % alphabet_power);
-        b_keys.push_back((b_keys[i-1] + b_keys[i]) % alphabet_power);
+        affine_reccurent_cipher_data_is_valid(text, key, alphabet);
+        std::string ciphertext = "";
+        int text_size = text.size();
+        int alphabet_power = alphabet.size();
+        std::vector<int> a_keys{key[0], key[1]};
+        std::vector<int> b_keys{key[2], key[3]};
+        for (int i{1}; i <= text_size - 2; i++)
+        {
+            a_keys.push_back((a_keys[i - 1] * a_keys[i]) % alphabet_power);
+            b_keys.push_back((b_keys[i - 1] + b_keys[i]) % alphabet_power);
+        }
+        for (int i{0}; i < text_size; i++)
+        {
+            int index = alphabet.find(text[i]);
+            ciphertext += alphabet[((index * a_keys[i] + b_keys[i]) % alphabet_power + alphabet_power) % alphabet_power];
+        }
+        return ciphertext;
     }
-    for (int i{0}; i < text_size; i++)
-    {
-        int index = alphabet.find(text[i]);
-        ciphertext += alphabet[((index * a_keys[i] + b_keys[i]) % alphabet_power + alphabet_power) % alphabet_power];
-    }
-    return ciphertext;
-    }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -336,44 +334,43 @@ std::string affine_reccurent_encryption(const std::string &text, const std::vect
  * \param[in] alphabet is string, that contains all symbols, which can be used in input text
  *
  * \return Encrypted text, error message if error occured
-*/
-std::string affine_reccurent_decryption(const std::string &ciphertext, const std::vector <int> &key, const std::string &alphabet)
+ */
+std::string affine_reccurent_decryption(const std::string &ciphertext, const std::vector<int> &key, const std::string &alphabet)
 {
     try
     {
-    affine_reccurent_cipher_data_is_valid(ciphertext, key, alphabet);
-    std::string text = "";
-    int ciphertext_size = ciphertext.size();
-    int alphabet_power = alphabet.size();
-    std::vector <int> a_keys{key[0], key[1]};
-    std::vector <int> b_keys{key[2], key[3]};
-    std::vector <int> a_inverse_keys;
-    for (int i{1}; i <= ciphertext_size; i++)
-    {
-        a_keys.push_back((a_keys[i-1] * a_keys[i]) % alphabet_power);
-        b_keys.push_back((b_keys[i-1] + b_keys[i]) % alphabet_power);
-    }
-    for (int n : a_keys)
-    {
-        for (int i{0}; i < alphabet_power; i++)
+        affine_reccurent_cipher_data_is_valid(ciphertext, key, alphabet);
+        std::string text = "";
+        int ciphertext_size = ciphertext.size();
+        int alphabet_power = alphabet.size();
+        std::vector<int> a_keys{key[0], key[1]};
+        std::vector<int> b_keys{key[2], key[3]};
+        std::vector<int> a_inverse_keys;
+        for (int i{1}; i <= ciphertext_size; i++)
         {
-            if ((i * n) % alphabet_power == 1)
+            a_keys.push_back((a_keys[i - 1] * a_keys[i]) % alphabet_power);
+            b_keys.push_back((b_keys[i - 1] + b_keys[i]) % alphabet_power);
+        }
+        for (int n : a_keys)
+        {
+            for (int i{0}; i < alphabet_power; i++)
             {
-                a_inverse_keys.push_back(i);
-                break;
+                if ((i * n) % alphabet_power == 1)
+                {
+                    a_inverse_keys.push_back(i);
+                    break;
+                }
             }
         }
+        for (int i{0}; i < ciphertext_size; i++)
+        {
+            int index = alphabet.find(ciphertext[i]);
+            text += alphabet[(((index - b_keys[i]) * a_inverse_keys[i]) % alphabet_power + alphabet_power) % alphabet_power];
+        }
+        return text;
     }
-    for (int i{0}; i < ciphertext_size; i++)
-    {
-        int index = alphabet.find(ciphertext[i]);
-        text += alphabet[(((index - b_keys[i]) * a_inverse_keys[i]) % alphabet_power + alphabet_power) % alphabet_power];
-    }
-    return text;
-    }
-    catch(input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
 }
-
