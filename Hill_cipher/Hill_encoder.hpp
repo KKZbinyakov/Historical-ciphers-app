@@ -324,12 +324,12 @@ public:
  * \class exception is basic exception class created to inherit other exception classes from it
  *
  */
-class exception
+class Hill_exception
 {
 public:
-    exception() noexcept;
-    exception(const exception &) noexcept;
-    virtual ~exception();
+    Hill_exception() noexcept;
+    Hill_exception(const exception &) noexcept;
+    virtual ~Hill_exception();
     virtual const char *what() const noexcept;
 };
 
