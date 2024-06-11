@@ -23,101 +23,6 @@
  */
 class Matrix_class
 {
-private:
-    /**
-     * An auxiliary recursive function that finds all unique products in a matrix, the number of multipliers in which is equal to the size of the matrix.
-     *
-     * \param[in] First_multiplier The element of the vector that the function is currently working with.
-     * \param[in] Determinant_vector A vector of terms that are unique products of a matrix, the number of multipliers of which is equal to the order of the matrix.
-     * \param[in] Y The row of the matrix.
-     *
-     * \return A vector of terms that are unique products of a matrix, the number of multipliers of which is equal to the order of the matrix.
-     */
-    std::vector<int> Rec_function(int First_multiplier, std::vector<int> &Determinant_vector, int Y = 1)
-    {
-        int number;
-        std::vector<int> Something;
-        std::vector<int> Determinant_parts;
-        for (unsigned long long i{0}; i < Matrix_X; i++)
-        {
-            Determinant_parts.push_back(First_multiplier * Matrix[Y][i]);
-            if (Y == Matrix_Y - 1)
-            {
-                number = Determinant_parts[i];
-                Determinant_vector.push_back(number);
-            }
-        }
-        if (Y == Matrix_Y - 1)
-        {
-            return Determinant_vector;
-        }
-        Y += 1;
-        if (Y < Matrix_Y)
-        {
-            for (unsigned long long j{0}; j < Determinant_parts.size(); j++)
-            {
-                Rec_function(Determinant_parts[j], Determinant_vector, Y);
-            }
-            return Determinant_vector;
-        }
-    }
-    /**
-     * Checks the vector for the presence of identical elements, returning a check vector vector if any are found.
-     *
-     * \param[in] Vector The vector in which the check is performed.
-     * \param[in] Check_vector The vector that will be used as a reference point in the future.
-     *
-     * \return The vector that will be used as a reference point in the future.
-     * \return A vector in which there are no repetitions.
-     */
-    std::vector<int> Duplicates_find(std::vector<int> Vector, std::vector<int> Check_vector)
-    {
-        std::set<int> Numbers;
-        unsigned long long Vector_size = Vector.size();
-        for (unsigned long long i{0}; i < Vector_size; i++)
-        {
-            if (Numbers.count(Vector[i]) == 1)
-            {
-                return Check_vector;
-            }
-            else
-            {
-                Numbers.insert(Vector[i]);
-                continue;
-            }
-        }
-        return Vector;
-    }
-    /**
-     * A function that counts the number of inversions in a vector.
-     *
-     * \param[in] Vector the investigated vector.
-     *
-     * \return Number of inversions.
-     */
-    int Inversion_counter(std::vector<int> Vector)
-    {
-        int counter{0};
-        std::vector<int> Numbers;
-        std::vector<int> Indexes;
-        for (unsigned long long i{0}; i < Vector.size(); i++)
-        {
-            Numbers.push_back(Vector[i]);
-            Indexes.push_back(i);
-        }
-        for (unsigned long long i{0}; i < Vector.size(); i++)
-        {
-            for (unsigned long long j{0}; j < Vector.size(); j++)
-            {
-                if (Numbers[i] > Vector[j] && Indexes[i] < j)
-                {
-                    counter += 1;
-                }
-            }
-        }
-        return counter;
-    }
-
 public:
     std::vector<std::vector<int>> Matrix; ///< Matrix.
     unsigned long long Matrix_X;          ///< Number of columns.
@@ -303,66 +208,67 @@ public:
         return Matrix_Composition;
     }
     /**
-     * Calculating the determinant of the matrix.
-     *
-     * \return determinant.
-     */
+    * Calculating the determinant of the matrix.
+    *
+    * \return determinant.
+    */
     int Determinant()
     {
-        std::vector<std::vector<int>> Index_storage;
-        std::vector<int> v1;
-        int determinant{0};
-        std::vector<int> Determinant_parts;
-        int Number_of_composition = pow(Matrix_X, Matrix_Y);
-        std::vector<int> Check_vector{0};
-        for (unsigned long long i{0}; i < Matrix_X - 1; i++)
+        int change_counter{0};
+        double multiplier = 0;
+        std::vector<std::vector<double>> Determinant_matrix;
+        std::vector<double> v1;
+        for(unsigned long long i{0}; i < Matrix_X; i++)
         {
-            Check_vector.push_back(0);
-        }
-        Index_storage.push_back(Check_vector);
-        if (Matrix_X == Matrix_Y)
-        {
-            for (int i{1}; i < Number_of_composition; i++)
+            Determinant_matrix.push_back(v1);
+            for(unsigned long long j{0}; j < Matrix_Y; j++)
             {
-                Index_storage.push_back(Index_storage[i - 1]);
-                unsigned long long l{Matrix_X - 1};
-                if (Index_storage[i][l] == Matrix_X - 1)
+                Determinant_matrix[i].push_back(Matrix[i][j]);
+            }
+        }
+        std::vector<double> Help_vector;
+        double Determinant{1};
+        if(Matrix_X == 0 && Matrix_Y == 0)
+        {
+            return 0;
+        }
+        else if(Matrix_X == 1 && Matrix_Y == 1)
+        {
+            return Matrix[0][0];
+        }
+        else
+        {
+            for(unsigned long long i{0}; i < Matrix_Y-1; i++)
+            {
+                for(unsigned long long j{i}; j < Matrix_X; j++)
                 {
-                    while (Index_storage[i][l] == Matrix_X - 1)
+                    if(Determinant_matrix[j][i] != 0)
                     {
-                        Index_storage[i][l] = 0;
-                        l = l - 1;
-                        if (Index_storage[i][l] != Matrix_X - 1)
-                        {
-                            Index_storage[i][l] = Index_storage[i][l] + 1;
-                            break;
-                        }
+                        Help_vector = Determinant_matrix[i];
+                        Determinant_matrix[i] = Determinant_matrix[j];
+                        Determinant_matrix[j] = Help_vector;
+                        break;
+                    }
+                    else
+                    {
+                        change_counter += 1;
                     }
                 }
-                else
+                for(unsigned long long j{i+1}; j < Matrix_X; j++)
                 {
-                    Index_storage[i][l] += 1;
+                    multiplier = Determinant_matrix[j][i] / Determinant_matrix[i][i];
+                    for(unsigned long long k{i}; k < Matrix_X; k++)
+                    {
+                        Determinant_matrix[j][k] = (Determinant_matrix[j][k] - Determinant_matrix[i][k] * multiplier);
+                    }
                 }
             }
-            for (unsigned long long i{0}; i < Matrix_X; i++)
+            for(unsigned long long f{0}; f < Matrix_X; f++)
             {
-                Determinant_parts = Rec_function(Matrix[0][i], v1, 1);
+               Determinant = Determinant * Determinant_matrix[f][f];
             }
-            for (unsigned long long i{0}; i < Determinant_parts.size(); i++)
-            {
-                Index_storage[i] = Duplicates_find(Index_storage[i], Check_vector);
-                if (Index_storage[i] == Check_vector)
-                {
-                    Determinant_parts[i] = 0;
-                }
-                if ((Inversion_counter(Index_storage[i]) % 2) != 0)
-                {
-                    Determinant_parts[i] = Determinant_parts[i] * (-1);
-                }
-                determinant += Determinant_parts[i];
-            }
+            return pow(-1, change_counter)*std::lround(Determinant);
         }
-        return determinant;
     }
     /**
      * Calculating the inverse matrix.
