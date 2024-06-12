@@ -328,7 +328,7 @@ class Hill_exception
 {
 public:
     Hill_exception() noexcept;
-    Hill_exception(const exception &) noexcept;
+    Hill_exception(const Hill_exception &) noexcept;
     virtual ~Hill_exception();
     virtual const char *what() const noexcept;
 };
@@ -337,11 +337,11 @@ public:
  * \class input_data_invalid is exception class to process exceptions caused by invalid input data
  *
  */
-class input_data_invalid : public std::exception
+class Hill_input_data_invalid : public std::exception
 {
 public:
     std::string message;
-    input_data_invalid(const std::string &_message)
+    Hill_input_data_invalid(const std::string &_message)
     {
         message = _message;
     }
