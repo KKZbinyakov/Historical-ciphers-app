@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <numeric>
 #include <exception>
+#include "exception.hpp"
 
 /**
  * \file Hill_encoder.hpp
