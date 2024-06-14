@@ -23,7 +23,7 @@ void hill_data_is_valid(const std::string &text, const std::string &ABC, Matrix_
     {
         if (count(ABC.begin(), ABC.end(), c) > 1)
         {
-            throw Hill_input_data_invalid("Alphabet letter repeat error");
+            throw input_data_invalid("Alphabet letter repeat error");
         }
     }
     long long counter{0};
@@ -33,18 +33,18 @@ void hill_data_is_valid(const std::string &text, const std::string &ABC, Matrix_
     }
     if (counter < text.size())
     {
-        throw Hill_input_data_invalid("Unknown text symbol");
+        throw input_data_invalid("Unknown text symbol");
     }
     if(Key.Matrix_X != Key.Matrix_Y)
     {
-        throw Hill_input_data_invalid("Invalid Key matrix");
+        throw input_data_invalid("Invalid Key matrix");
     }
     int m;
     m = ABC.size();
     int Key_determinant = ((Key.Determinant() % m) + m) % m;
     if (greatest_common_divisor(m, Key_determinant) != 1 || Key_determinant == 0)
     {
-        throw Hill_input_data_invalid("Invalid Key matrix");
+        throw input_data_invalid("Invalid Key matrix");
     }
 }
 
@@ -126,7 +126,7 @@ std::string Hill_cipher_encoder(std::string ABC, std::string Text, Matrix_class 
         }
         return Encrypted_text;
     }
-    catch (Hill_input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -195,7 +195,7 @@ std::string Hill_cipher_decoder(std::string ABC, std::string Cipher_Text, Matrix
         }
         return Decode_Text;
     }
-    catch (Hill_input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -257,7 +257,7 @@ std::string Rec_Hill_cipher_encoder(std::string ABC, std::string Text, Matrix_cl
         }
         return Encrypted_text;
     }
-    catch (Hill_input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
@@ -314,7 +314,7 @@ std::string Rec_Hill_cipher_decoder(std::string ABC, std::string Cipher_Text, Ma
         }
         return Decode_Text;
     }
-    catch (Hill_input_data_invalid error)
+    catch (input_data_invalid error)
     {
         return error.message;
     }
