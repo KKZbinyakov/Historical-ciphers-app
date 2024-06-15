@@ -3,13 +3,6 @@
 #include "doctest.h"
 #include "mainwindow.h"
 
-/**
- * \file Frontend_test.cpp
- *
- * This file contains affine ciphers testing for errors, ciphering and
- * deciphering results
- *
- */
 
 TEST_CASE("Hex string to vector test") {
   std::string hexString = "EF";
