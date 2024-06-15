@@ -82,27 +82,28 @@ Currently available in the Historical-ciphers-app are:
 ## How the program works.
 
 - At the very beginning, the user is presented with a choice of the cipher he wants to use:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - Next, the user selects the type of cipher that he wants to use (or the mode of operation for the gamma cipher):
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For a simple substitution cipher, the user enters the alphabet, a permutation of the alphabet, and the text he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For an affine cipher, the user enters the alphabet, the keys a and b, and the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For an affine recurrent cipher, the user enters the alphabet, the keys a1, a2, b1, b2, the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For the Hill cipher, the user enters the size of the key matrix, the key matrix, the alphabet and the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For a recurrent Hill cipher, the user enters the size of the key matrices, two key matrices, the alphabet, and the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For the Vigener cipher with the repetition of a short slogan, the user enters the key, the alphabet and the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For a Vision cipher with a self-keyed ciphertext, the user enters the key, the alphabet, and the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For a Vision cipher with a self-key in plaintext, the user enters the key, the alphabet, and the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For a magma cipher with a normal mode of operation, the user enters the key and the data that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted data:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For a magma cipher with a gamma mode of operation, the user enters the key, the sync link, and the data that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted data:
-
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For a magma cipher with feedback gamma mode, the user enters the key, the sync link, and the data that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
