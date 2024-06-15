@@ -4,6 +4,16 @@
 #include <string>
 #include <exception>
 
+/**
+ * \file exceptions.hpp
+ *
+ * A file containing classes for working with exceptions.
+ */
+
+ /**
+ * A class for working with exceptions.
+ *
+ */
 class exception
 {
 public:
@@ -14,6 +24,10 @@ public:
     virtual const char* what() const noexcept;
 };
 
+/**
+ * A class to simplify error output.
+ *
+ */
 class input_data_invalid: public std::exception
 {
 public:
@@ -21,6 +35,12 @@ public:
     input_data_invalid(const std::string& _message){
         message = _message;
     }
+
+/**
+ * The function that returns an error.
+ *
+ * \return message.c_str() error message.
+ */
     const char* what() const noexcept override
     {
         return message.c_str();
