@@ -7,6 +7,7 @@
  */
 
 /**
+ * A function that checks the correctness of the entered data for the Hill cipher.
  *
  * \param[in] text The text being checked for correctness.
  * \param[in] ABC The alphabet being checked for correctness.
