@@ -29,25 +29,31 @@ For correct installation and further use of the system, access to the files of t
 Например, установка Qt6 через менеджер vcpkg:
 
 ```vcpkg install qt```
+
 Установка только базового пакета
 
 ```vcpkg install qtbase```
+
 -MSYS2/Packman
 
 Установка Qt через MSYS с помощью пакетного менеджера packman:
 
 ```pacman -S mingw-w64-x86_64-qt6```
+
 Только базовый пакет
 
 ```pacman -S mingw-w64-x86_64-qt6-base```
+
 Установка Qt Creator
 
 ```pacman -S mingw-w64-x86_64-qt-creator```
+
 -chocolatey
 
 Установка Qt6 с Qt Creator через менеджер chocolatey:
 
 ```choco install -y qt6-base-dev cmake qtcreator```
+
 -winget
 
 Установка Qt6 через менеджер winget:
