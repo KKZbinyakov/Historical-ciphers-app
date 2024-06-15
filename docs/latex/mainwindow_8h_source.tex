@@ -1,0 +1,103 @@
+\doxysection{mainwindow.\+h}
+\hypertarget{mainwindow_8h_source}{}\label{mainwindow_8h_source}\index{frontend/mainwindow.h@{frontend/mainwindow.h}}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_affine__ciphers_8hpp}{Affine\_ciphers.hpp}}"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_hill__encoder_8hpp}{Hill\_encoder.hpp}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}exceptions.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{magma__cipher_8hpp}{magma\_cipher.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vigenere__ciphers_8hpp}{vigenere\_ciphers.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QApplication>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QGridLayout>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ QWidget\ \{}
+\DoxyCodeLine{00033\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00037\ \ \ \textcolor{comment}{//\ ...\ остальные\ члены\ класса\ ...}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ OnComboBoxChanged(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ OnCipherSelected();}
+\DoxyCodeLine{00042\ \ \ std::vector<std::vector<int>>\ OnSizeEntered();\ \textcolor{comment}{//\ Для\ шифра\ Хилла}}
+\DoxyCodeLine{00043\ \ \ \textcolor{comment}{//\ \ \ \ std::vector<std::string>\ OnFileButtonClicked();}}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ OnEncryptButtonClicked();}
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ OnDecryptButtonClicked();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00048\ \ \ QComboBox\ *comboBox;}
+\DoxyCodeLine{00049\ \ \ QVector<QPushButton\ *>\ comboboxbuttons;}
+\DoxyCodeLine{00050\ \ \ QVector<QLabel\ *>\ default\_labels;}
+\DoxyCodeLine{00051\ \ \ QVector<QLineEdit\ *>\ default\_lines;}
+\DoxyCodeLine{00052\ \ \ QLabel\ *inputLabel;}
+\DoxyCodeLine{00053\ \ \ QLabel\ *alphabetLabel;}
+\DoxyCodeLine{00054\ \ \ QLabel\ *fileLabel;}
+\DoxyCodeLine{00055\ \ \ QLineEdit\ *inputLine;}
+\DoxyCodeLine{00056\ \ \ QLineEdit\ *alphabetLine;}
+\DoxyCodeLine{00057\ \ \ QLineEdit\ *fileLine;}
+\DoxyCodeLine{00058\ \ \ QLineEdit\ *outputLine;}
+\DoxyCodeLine{00059\ \ \ QPushButton\ *encryptButton;}
+\DoxyCodeLine{00060\ \ \ QPushButton\ *decryptButton;}
+\DoxyCodeLine{00061\ \ \ QPushButton\ *fileButton;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ QVector<QLabel\ *>\ affine\_labels;}
+\DoxyCodeLine{00064\ \ \ QVector<QLineEdit\ *>\ affine\_lines;}
+\DoxyCodeLine{00065\ \ \ QLabel\ *replacement\_Label;}
+\DoxyCodeLine{00066\ \ \ QLabel\ *alpha\_1\_Label;}
+\DoxyCodeLine{00067\ \ \ QLabel\ *beta\_1\_Label;}
+\DoxyCodeLine{00068\ \ \ QLabel\ *alpha\_2\_Label;}
+\DoxyCodeLine{00069\ \ \ QLabel\ *beta\_2\_Label;}
+\DoxyCodeLine{00070\ \ \ QLineEdit\ *replacement\_Line;}
+\DoxyCodeLine{00071\ \ \ QLineEdit\ *alpha\_1\_Line;}
+\DoxyCodeLine{00072\ \ \ QLineEdit\ *beta\_1\_Line;}
+\DoxyCodeLine{00073\ \ \ QLineEdit\ *alpha\_2\_Line;}
+\DoxyCodeLine{00074\ \ \ QLineEdit\ *beta\_2\_Line;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ QVector<QLabel\ *>\ hill\_labels;}
+\DoxyCodeLine{00077\ \ \ QVector<QLineEdit\ *>\ hill\_lines;}
+\DoxyCodeLine{00078\ \ \ QVector<QPushButton\ *>\ hill\_buttons;}
+\DoxyCodeLine{00079\ \ \ QLabel\ *matrix\_1\_Label;}
+\DoxyCodeLine{00080\ \ \ QLabel\ *matrix\_2\_Label;}
+\DoxyCodeLine{00081\ \ \ QLabel\ *number\_Label;}
+\DoxyCodeLine{00082\ \ \ QLineEdit\ *cell\_Line;}
+\DoxyCodeLine{00083\ \ \ QLineEdit\ *number\_Line;}
+\DoxyCodeLine{00084\ \ \ QPushButton\ *ok\_Button;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ QVector<QLabel\ *>\ vigenere\_labels;}
+\DoxyCodeLine{00087\ \ \ QVector<QLineEdit\ *>\ vigenere\_lines;}
+\DoxyCodeLine{00088\ \ \ QLabel\ *vigenere\_Label;}
+\DoxyCodeLine{00089\ \ \ QLineEdit\ *vigenere\_Line;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ QVector<QLabel\ *>\ magma\_labels;}
+\DoxyCodeLine{00092\ \ \ QVector<QLineEdit\ *>\ magma\_lines;}
+\DoxyCodeLine{00093\ \ \ QLabel\ *data\_Label;}
+\DoxyCodeLine{00094\ \ \ QLabel\ *key\_Label;}
+\DoxyCodeLine{00095\ \ \ QLabel\ *synchrolink\_Label;}
+\DoxyCodeLine{00096\ \ \ QLineEdit\ *data\_Line;}
+\DoxyCodeLine{00097\ \ \ QLineEdit\ *key\_Line;}
+\DoxyCodeLine{00098\ \ \ QLineEdit\ *synchrolink\_Line;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ std::map<std::string,\ std::vector<std::string>>\ cipher\_types\ =\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}Affine\ ciphers"{}},\ \{\textcolor{stringliteral}{"{}Simple\ replacement"{}},\ \textcolor{stringliteral}{"{}Affine"{}},\ \textcolor{stringliteral}{"{}Recurrent\ affine"{}}\}\},}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}Hill\ ciphers"{}},\ \{\textcolor{stringliteral}{"{}Hill\ cipher"{}},\ \textcolor{stringliteral}{"{}Recurrent\ Hill\ cipher"{}}\}\},}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}Vigenere\ ciphers"{}},\ \{\textcolor{stringliteral}{"{}Repeat\ key"{}},\ \textcolor{stringliteral}{"{}Open\ key"{}},\ \textcolor{stringliteral}{"{}Self\ cipher\ key"{}}\}\},}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}Magma\ ciphers"{}},\ \{\textcolor{stringliteral}{"{}Magma\ cipher"{}},\ \textcolor{stringliteral}{"{}Gamma"{}},\ \textcolor{stringliteral}{"{}Feedback\ gamma"{}}\}\}\};}
+\DoxyCodeLine{00105\ \ \ QPushButton\ *lastClickedButton\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ std::vector<uint8\_t>\ \mbox{\hyperlink{mainwindow_8h_a32625ba3926b4ec0859cbe53d07dcf4d}{hexStringToVector}}(\textcolor{keyword}{const}\ std::string\ \&hexString);}
+\DoxyCodeLine{00109\ std::string\ \mbox{\hyperlink{mainwindow_8h_a36b8425b9a09f7765f64604406abb928}{vectorToHexString}}(std::vector<uint8\_t>\ vector);}
+
+\end{DoxyCode}

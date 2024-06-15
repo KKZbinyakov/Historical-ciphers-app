@@ -1,0 +1,57 @@
+\doxysection{affine\+\_\+ciphers/\+Affine\+\_\+ciphers\+\_\+tests.cpp File Reference}
+\hypertarget{_affine__ciphers__tests_8cpp}{}\label{_affine__ciphers__tests_8cpp}\index{affine\_ciphers/Affine\_ciphers\_tests.cpp@{affine\_ciphers/Affine\_ciphers\_tests.cpp}}
+{\ttfamily \#include "{}Affine\+\_\+ciphers.\+hpp"{}}\newline
+{\ttfamily \#include "{}doctest.\+h"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_a3f87579b3388cbf93dd738ad58049f5e}\label{_affine__ciphers__tests_8cpp_a3f87579b3388cbf93dd738ad58049f5e} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Mutual simple numbers"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_acffe9dd600a6176b84a06d65cb92bc09}\label{_affine__ciphers__tests_8cpp_acffe9dd600a6176b84a06d65cb92bc09} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Not mutual simple numbers"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_a54d5141d1493572bcf7ca7a107dbfbdf}\label{_affine__ciphers__tests_8cpp_a54d5141d1493572bcf7ca7a107dbfbdf} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Simple replacement key and and alphabet have not same length"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_a3e795cfd25da0ae1256224fd94107e8b}\label{_affine__ciphers__tests_8cpp_a3e795cfd25da0ae1256224fd94107e8b} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Repeating symbol in alphabet"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_a674bea0dd34956a73ea94db554e2fbcf}\label{_affine__ciphers__tests_8cpp_a674bea0dd34956a73ea94db554e2fbcf} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Repeating symbol in key"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_a67392594855ad3ddcf03480564d7ef55}\label{_affine__ciphers__tests_8cpp_a67392594855ad3ddcf03480564d7ef55} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Unknown symbol in the key"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_ae1c5e27584ee0f73dcc017af85ed6ee4}\label{_affine__ciphers__tests_8cpp_ae1c5e27584ee0f73dcc017af85ed6ee4} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Unknown symbol in the text"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_a286ae605c40d052ef7984d19cccb0e8d}\label{_affine__ciphers__tests_8cpp_a286ae605c40d052ef7984d19cccb0e8d} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Alphabet power and a-\/key are not mutual simple"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_ae19069052d85e5f0a7afea6b65c35533}\label{_affine__ciphers__tests_8cpp_ae19069052d85e5f0a7afea6b65c35533} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Simple replacement encryption"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_a3150e2a5755a0f2a31d6eb5ff1bee1df}\label{_affine__ciphers__tests_8cpp_a3150e2a5755a0f2a31d6eb5ff1bee1df} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Simple replacement decryption"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_a3f08cc8d4a67e3c0c86e07d0af366581}\label{_affine__ciphers__tests_8cpp_a3f08cc8d4a67e3c0c86e07d0af366581} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Affine encryption"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_affdc8d852cbad964a0c09ac57f218437}\label{_affine__ciphers__tests_8cpp_affdc8d852cbad964a0c09ac57f218437} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Affine decryption"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_ae0f5a994aa914309fd380b1f8c59befd}\label{_affine__ciphers__tests_8cpp_ae0f5a994aa914309fd380b1f8c59befd} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Recurrent affine encryption"{})
+\item 
+\Hypertarget{_affine__ciphers__tests_8cpp_a2aafe3ea953029c49282b8c34fe7863e}\label{_affine__ciphers__tests_8cpp_a2aafe3ea953029c49282b8c34fe7863e} 
+{\bfseries TEST\+\_\+\+CASE} ("{}Recurrent affine decryption"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains affine ciphers testing for errors, ciphering and deciphering results 

@@ -1,0 +1,191 @@
+\doxysection{magma\+\_\+cipher/magma\+\_\+cipher.cpp File Reference}
+\hypertarget{magma__cipher_8cpp}{}\label{magma__cipher_8cpp}\index{magma\_cipher/magma\_cipher.cpp@{magma\_cipher/magma\_cipher.cpp}}
+{\ttfamily \#include "{}magma\+\_\+cipher.\+hpp"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{magma__cipher_8cpp_a4faf06a08fb0c0a649a7c96fff57aa1c}{magma\+Cipher\+Data\+Is\+Valid}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&key)
+\item 
+void \mbox{\hyperlink{magma__cipher_8cpp_a1e0035ba8d1ad0c34c8a1275e7b7dd4b}{magma\+Gamma\+Cipher\+Data\+Is\+Valid}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&key, const std\+::vector$<$ uint8\+\_\+t $>$ \&synchro\+Link)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{magma__cipher_8cpp_a478e4a7f84a98b1284abf5751b435ab1}{magma\+Encrypt}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&key)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{magma__cipher_8cpp_abc5932f5da3b1cd003d5d5c91650ecb2}{magma\+Decrypt}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&key)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{magma__cipher_8cpp_abe934e80a9fb78746ea9362ce1fdf0fb}{magma\+Gamma\+Encrypt}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&key, const std\+::vector$<$ uint8\+\_\+t $>$ \&synchro\+Link)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{magma__cipher_8cpp_a872862dc81c8979c1a0b39b69e79253e}{magma\+Gamma\+Decrypt}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&key, const std\+::vector$<$ uint8\+\_\+t $>$ \&synchro\+Link)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{magma__cipher_8cpp_a46015296a82c63249a211089cad67d5b}{magma\+Feedback\+Gamma\+Encrypt}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&key, const std\+::vector$<$ uint8\+\_\+t $>$ \&synchro\+Link)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{magma__cipher_8cpp_a681cc0202679daa079bd42e5b0b6d507}{magma\+Feedback\+Gamma\+Decrypt}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const std\+::vector$<$ uint8\+\_\+t $>$ \&key, const std\+::vector$<$ uint8\+\_\+t $>$ \&synchro\+Link)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains encryption and decryption functions of all magma cipher types and data validation functions 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{magma__cipher_8cpp_a4faf06a08fb0c0a649a7c96fff57aa1c}\label{magma__cipher_8cpp_a4faf06a08fb0c0a649a7c96fff57aa1c} 
+\index{magma\_cipher.cpp@{magma\_cipher.cpp}!magmaCipherDataIsValid@{magmaCipherDataIsValid}}
+\index{magmaCipherDataIsValid@{magmaCipherDataIsValid}!magma\_cipher.cpp@{magma\_cipher.cpp}}
+\doxysubsubsection{\texorpdfstring{magmaCipherDataIsValid()}{magmaCipherDataIsValid()}}
+{\footnotesize\ttfamily void magma\+Cipher\+Data\+Is\+Valid (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{key }\end{DoxyParamCaption})}
+
+The function checks whether magma simple replacement data is valid
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & is potential input data in the format of a vector of numbers of type uint8\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is potential input key in the format of a vector of numbers of type uint8\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em input\+\_\+data\+\_\+invalid} & if length of the data contains not integer number of encrypted blocks or if the key not consist of thirty-\/two eight-\/bit numbers \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{magma__cipher_8cpp_abc5932f5da3b1cd003d5d5c91650ecb2}\label{magma__cipher_8cpp_abc5932f5da3b1cd003d5d5c91650ecb2} 
+\index{magma\_cipher.cpp@{magma\_cipher.cpp}!magmaDecrypt@{magmaDecrypt}}
+\index{magmaDecrypt@{magmaDecrypt}!magma\_cipher.cpp@{magma\_cipher.cpp}}
+\doxysubsubsection{\texorpdfstring{magmaDecrypt()}{magmaDecrypt()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ magma\+Decrypt (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{key }\end{DoxyParamCaption})}
+
+The function performs decryption using a simple replacement algorithm. Firstly it checks validity of input data, secondly it transforms input key data into a class object, before that, by converting the vector to an array, thirdly it calls a "{}decrypt"{} method of the magma class to de{\ucr}rypt input data. Handles exceptions relevant to this type of encryption
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & is input data in the format of a vector of numbers of type uint8. The length of the vector is a multiple of eight\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is input key in the format of a vector of numbers of type uint8. The length of the key is thirty-\/two numbers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data, error message, if error occured 
+\end{DoxyReturn}
+\Hypertarget{magma__cipher_8cpp_a478e4a7f84a98b1284abf5751b435ab1}\label{magma__cipher_8cpp_a478e4a7f84a98b1284abf5751b435ab1} 
+\index{magma\_cipher.cpp@{magma\_cipher.cpp}!magmaEncrypt@{magmaEncrypt}}
+\index{magmaEncrypt@{magmaEncrypt}!magma\_cipher.cpp@{magma\_cipher.cpp}}
+\doxysubsubsection{\texorpdfstring{magmaEncrypt()}{magmaEncrypt()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ magma\+Encrypt (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{key }\end{DoxyParamCaption})}
+
+The function performs encryption using a simple replacement algorithm. Firstly it checks validity of input data, secondly it transforms input key data into a class object, before that, by converting the vector to an array, thirdly it calls a "{}encrypt"{} method of the magma class to en{\ucr}rypt input data. Handles exceptions relevant to this type of encryption
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & is input data in the format of a vector of numbers of type uint8. The length of the vector is a multiple of eight\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is input key in the format of a vector of numbers of type uint8. The length of the key is thirty-\/two numbers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data, error message, if error occured 
+\end{DoxyReturn}
+\Hypertarget{magma__cipher_8cpp_a681cc0202679daa079bd42e5b0b6d507}\label{magma__cipher_8cpp_a681cc0202679daa079bd42e5b0b6d507} 
+\index{magma\_cipher.cpp@{magma\_cipher.cpp}!magmaFeedbackGammaDecrypt@{magmaFeedbackGammaDecrypt}}
+\index{magmaFeedbackGammaDecrypt@{magmaFeedbackGammaDecrypt}!magma\_cipher.cpp@{magma\_cipher.cpp}}
+\doxysubsubsection{\texorpdfstring{magmaFeedbackGammaDecrypt()}{magmaFeedbackGammaDecrypt()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ magma\+Feedback\+Gamma\+Decrypt (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{key,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{synchro\+Link }\end{DoxyParamCaption})}
+
+The function performs decryption using a feedback gamming algorithm. Firstly it checks validity of input data, secondly it transforms input key data into a class object, before that, by converting the vector to an array, after that it transforms synchrolink from vector to array. It calls a "{}feedback\+Gamma\+Algorithm"{} method of the magma class to de{\ucr}rypt input data. Handles exceptions relevant to this type of decryption
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & is input data in the format of a vector of numbers of type uint8. The length of the vector is a multiple of eight\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is input key in the format of a vector of numbers of type uint8. The length of the key is thirty-\/two numbers\\
+\hline
+\mbox{\texttt{ in}}  & {\em synchro\+Link} & is input key analog in the format of a vector of numbers of type uint8. It\textquotesingle{}s length is eight numbers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data, error message, if error occured 
+\end{DoxyReturn}
+\Hypertarget{magma__cipher_8cpp_a46015296a82c63249a211089cad67d5b}\label{magma__cipher_8cpp_a46015296a82c63249a211089cad67d5b} 
+\index{magma\_cipher.cpp@{magma\_cipher.cpp}!magmaFeedbackGammaEncrypt@{magmaFeedbackGammaEncrypt}}
+\index{magmaFeedbackGammaEncrypt@{magmaFeedbackGammaEncrypt}!magma\_cipher.cpp@{magma\_cipher.cpp}}
+\doxysubsubsection{\texorpdfstring{magmaFeedbackGammaEncrypt()}{magmaFeedbackGammaEncrypt()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ magma\+Feedback\+Gamma\+Encrypt (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{key,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{synchro\+Link }\end{DoxyParamCaption})}
+
+The function performs encryption using a feedback gamming algorithm. Firstly it checks validity of input data, secondly it transforms input key data into a class object, before that, by converting the vector to an array, after that it transforms synchrolink from vector to array. It calls a "{}feedback\+Gamma\+Algorithm"{} method of the magma class to en{\ucr}rypt input data. Handles exceptions relevant to this type of encryption
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & is input data in the format of a vector of numbers of type uint8. The length of the vector is a multiple of eight\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is input key in the format of a vector of numbers of type uint8. The length of the key is thirty-\/two numbers\\
+\hline
+\mbox{\texttt{ in}}  & {\em synchro\+Link} & is input key analog in the format of a vector of numbers of type uint8. It\textquotesingle{}s length is eight numbers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data, error message, if error occured 
+\end{DoxyReturn}
+\Hypertarget{magma__cipher_8cpp_a1e0035ba8d1ad0c34c8a1275e7b7dd4b}\label{magma__cipher_8cpp_a1e0035ba8d1ad0c34c8a1275e7b7dd4b} 
+\index{magma\_cipher.cpp@{magma\_cipher.cpp}!magmaGammaCipherDataIsValid@{magmaGammaCipherDataIsValid}}
+\index{magmaGammaCipherDataIsValid@{magmaGammaCipherDataIsValid}!magma\_cipher.cpp@{magma\_cipher.cpp}}
+\doxysubsubsection{\texorpdfstring{magmaGammaCipherDataIsValid()}{magmaGammaCipherDataIsValid()}}
+{\footnotesize\ttfamily void magma\+Gamma\+Cipher\+Data\+Is\+Valid (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{key,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{synchro\+Link }\end{DoxyParamCaption})}
+
+The function checks whether magma simple replacement data is valid
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & is potential input data in the format of a vector of numbers of type uint8\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is potential input key in the format of a vector of numbers of type uint8\\
+\hline
+\mbox{\texttt{ in}}  & {\em synchro\+Link} & is potential input key analog in the format of a vector of numbers of type uint8\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em input\+\_\+data\+\_\+invalid} & if length of the data contains not integer number of encrypted blocks (contains a number of numbers not exceeding eight) or if the synchro\+Link not consist of eight eight-\/bit numbers or if the key not consist of thirty-\/two eight-\/bit numbers \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{magma__cipher_8cpp_a872862dc81c8979c1a0b39b69e79253e}\label{magma__cipher_8cpp_a872862dc81c8979c1a0b39b69e79253e} 
+\index{magma\_cipher.cpp@{magma\_cipher.cpp}!magmaGammaDecrypt@{magmaGammaDecrypt}}
+\index{magmaGammaDecrypt@{magmaGammaDecrypt}!magma\_cipher.cpp@{magma\_cipher.cpp}}
+\doxysubsubsection{\texorpdfstring{magmaGammaDecrypt()}{magmaGammaDecrypt()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ magma\+Gamma\+Decrypt (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{key,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{synchro\+Link }\end{DoxyParamCaption})}
+
+The function performs decryption using a gamming algorithm. Firstly it checks validity of input data, secondly it transforms input key data into a class object, before that, by converting the vector to an array, after that it transforms synchrolink from vector to array. It calls a "{}gamma\+Algorithm"{} method of the magma class to de{\ucr}rypt input data. Handles exceptions relevant to this type of decryption
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & is input data in the format of a vector of numbers of type uint8. The length of the vector is a multiple of eight\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is input key in the format of a vector of numbers of type uint8. The length of the key is thirty-\/two numbers\\
+\hline
+\mbox{\texttt{ in}}  & {\em synchro\+Link} & is input key analog in the format of a vector of numbers of type uint8. It\textquotesingle{}s length is eight numbers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted data, error message, if error occured 
+\end{DoxyReturn}
+\Hypertarget{magma__cipher_8cpp_abe934e80a9fb78746ea9362ce1fdf0fb}\label{magma__cipher_8cpp_abe934e80a9fb78746ea9362ce1fdf0fb} 
+\index{magma\_cipher.cpp@{magma\_cipher.cpp}!magmaGammaEncrypt@{magmaGammaEncrypt}}
+\index{magmaGammaEncrypt@{magmaGammaEncrypt}!magma\_cipher.cpp@{magma\_cipher.cpp}}
+\doxysubsubsection{\texorpdfstring{magmaGammaEncrypt()}{magmaGammaEncrypt()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ magma\+Gamma\+Encrypt (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{key,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{synchro\+Link }\end{DoxyParamCaption})}
+
+The function performs encryption using a gamming algorithm. Firstly it checks validity of input data, secondly it transforms input key data into a class object, before that, by converting the vector to an array, after that it transforms synchrolink from vector to array. It calls a "{}gamma\+Algorithm"{} method of the magma class to en{\ucr}rypt input data. Handles exceptions relevant to this type of encryption
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em data} & is input data in the format of a vector of numbers of type uint8. The length of the vector is a multiple of eight\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is input key in the format of a vector of numbers of type uint8. The length of the key is thirty-\/two numbers\\
+\hline
+\mbox{\texttt{ in}}  & {\em synchro\+Link} & is input key analog in the format of a vector of numbers of type uint8. It\textquotesingle{}s length is eight numbers\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted data, error message, if error occured 
+\end{DoxyReturn}

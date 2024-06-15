@@ -1,0 +1,40 @@
+\doxysection{Affine\+\_\+ciphers.\+hpp}
+\hypertarget{_affine__ciphers_8hpp_source}{}\label{_affine__ciphers_8hpp_source}\index{affine\_ciphers/Affine\_ciphers.hpp@{affine\_ciphers/Affine\_ciphers.hpp}}
+\mbox{\hyperlink{_affine__ciphers_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}exceptions.hpp"{}}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00014\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_affine__ciphers_8hpp_a416bb0c2856bddb53c89915f9ae5542c}{mutual\_simple}}(\textcolor{keywordtype}{int}\ a,\ \textcolor{keywordtype}{int}\ b);}
+\DoxyCodeLine{00015\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_affine__ciphers_8hpp_a3bb1a3664018850dab00f52655fe3ab0}{replacement\_cipher\_data\_is\_valid}}(\textcolor{keyword}{const}\ std::string\ \&text,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_affine__ciphers_8hpp_ae971d1807a2010eabdb75b3bd393b3e7}{affine\_cipher\_data\_is\_valid}}(\textcolor{keyword}{const}\ std::string\ \&text,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&key,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_affine__ciphers_8hpp_a38190e6d22fed7da3c1eb5c15c1b70ce}{affine\_reccurent\_cipher\_data\_is\_valid}}(\textcolor{keyword}{const}\ std::string\ \&text,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&key,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00024\ std::string\ \mbox{\hyperlink{_affine__ciphers_8hpp_abc97eea87b2b555ce53373b91b64b870}{simple\_replacement\_encryption}}(\textcolor{keyword}{const}\ std::string\ \&text,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00027\ std::string\ \mbox{\hyperlink{_affine__ciphers_8hpp_a29c900a9562e9288a2456a36a831a116}{simple\_replacement\_decryption}}(\textcolor{keyword}{const}\ std::string\ \&ciphertext,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00030\ std::string\ \mbox{\hyperlink{_affine__ciphers_8hpp_a83838d8695865679f64c762a3efdc46f}{affine\_encryption}}(\textcolor{keyword}{const}\ std::string\ \&text,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&key,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00033\ std::string\ \mbox{\hyperlink{_affine__ciphers_8hpp_ac1c6d330f66484cb6e260d54a6143c9c}{affine\_decryption}}(\textcolor{keyword}{const}\ std::string\ \&ciphertext,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&key,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00036\ std::string\ \mbox{\hyperlink{_affine__ciphers_8hpp_a12525c2adf17f3ef5b75759885ad3cf2}{affine\_reccurent\_encryption}}(\textcolor{keyword}{const}\ std::string\ \&text,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&key,}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00039\ std::string\ \mbox{\hyperlink{_affine__ciphers_8hpp_a405d45e0f593f24538e1e67b2b84f83e}{affine\_reccurent\_decryption}}(\textcolor{keyword}{const}\ std::string\ \&ciphertext,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<int>\ \&key,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+
+\end{DoxyCode}

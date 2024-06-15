@@ -1,0 +1,184 @@
+\doxysection{vigenere\+\_\+ciphers/vigenere\+\_\+ciphers.cpp File Reference}
+\hypertarget{vigenere__ciphers_8cpp}{}\label{vigenere__ciphers_8cpp}\index{vigenere\_ciphers/vigenere\_ciphers.cpp@{vigenere\_ciphers/vigenere\_ciphers.cpp}}
+{\ttfamily \#include "{}vigenere\+\_\+ciphers.\+hpp"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$exception$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vigenere__ciphers_8cpp_af0cfe06d5129f23dcff4acf8f747a137}{vigenere\+\_\+data\+\_\+is\+\_\+valid}} (const std\+::string \&text, const std\+::string \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{vigenere__ciphers_8cpp_a13d41dc613ba26de8006238ef286139c}{repeat\+\_\+key\+\_\+ciphering}} (const std\+::string \&text, const std\+::string \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{vigenere__ciphers_8cpp_acf41c2cca2f00964ccc6cf9c8f293d0a}{repeat\+\_\+key\+\_\+deciphering}} (const std\+::string \&ciphertext, const std\+::string \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{vigenere__ciphers_8cpp_adc35c935f20a33a1f331d62ab948a0ef}{self\+\_\+open\+\_\+key\+\_\+ciphering}} (const std\+::string \&text, const std\+::string \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{vigenere__ciphers_8cpp_a25da46e5921f820192e1f16be409ab2e}{self\+\_\+open\+\_\+key\+\_\+deciphering}} (const std\+::string \&ciphertext, const std\+::string \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{vigenere__ciphers_8cpp_a310c90a73332ca1b8a5844349bec8951}{self\+\_\+cipher\+\_\+key\+\_\+ciphering}} (const std\+::string \&text, const std\+::string \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{vigenere__ciphers_8cpp_a4f3beac17d2e7b256e5d105120600f13}{self\+\_\+cipher\+\_\+key\+\_\+deciphering}} (const std\+::string \&ciphertext, const std\+::string \&key, const std\+::string \&alphabet)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+In that file we describe the functions of 3 types of vigenere cipherings and decipherings, namely short key gamma, self key from opentext and self key from ciphertext, and the validation function for them. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{vigenere__ciphers_8cpp_a13d41dc613ba26de8006238ef286139c}\label{vigenere__ciphers_8cpp_a13d41dc613ba26de8006238ef286139c} 
+\index{vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}!repeat\_key\_ciphering@{repeat\_key\_ciphering}}
+\index{repeat\_key\_ciphering@{repeat\_key\_ciphering}!vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{repeat\_key\_ciphering()}{repeat\_key\_ciphering()}}
+{\footnotesize\ttfamily std\+::string repeat\+\_\+key\+\_\+ciphering (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function of Vigenere ciphering with gamma formed with repeating short key.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & The text we want to encrypt or decrypt with some of Vigenere ciphers.\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & The key for Vigenere ciphering.\\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & The alphabet of Vigenere ciphering.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ciphertext for that input data if data is correct. 
+
+error message if data is incorrect. 
+\end{DoxyReturn}
+\Hypertarget{vigenere__ciphers_8cpp_acf41c2cca2f00964ccc6cf9c8f293d0a}\label{vigenere__ciphers_8cpp_acf41c2cca2f00964ccc6cf9c8f293d0a} 
+\index{vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}!repeat\_key\_deciphering@{repeat\_key\_deciphering}}
+\index{repeat\_key\_deciphering@{repeat\_key\_deciphering}!vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{repeat\_key\_deciphering()}{repeat\_key\_deciphering()}}
+{\footnotesize\ttfamily std\+::string repeat\+\_\+key\+\_\+deciphering (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ciphertext,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function of Vigenere ciphering with gamma formed with repeating short key.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & The text we want to encrypt or decrypt with some of Vigenere ciphers.\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & The key for Vigenere ciphering.\\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & The alphabet of Vigenere ciphering.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ciphertext for that input data if data is correct. 
+
+error message if data is incorrect. 
+\end{DoxyReturn}
+\Hypertarget{vigenere__ciphers_8cpp_a310c90a73332ca1b8a5844349bec8951}\label{vigenere__ciphers_8cpp_a310c90a73332ca1b8a5844349bec8951} 
+\index{vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}!self\_cipher\_key\_ciphering@{self\_cipher\_key\_ciphering}}
+\index{self\_cipher\_key\_ciphering@{self\_cipher\_key\_ciphering}!vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{self\_cipher\_key\_ciphering()}{self\_cipher\_key\_ciphering()}}
+{\footnotesize\ttfamily std\+::string self\+\_\+cipher\+\_\+key\+\_\+ciphering (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function of Vigenere ciphering with gamma formed with selfkey from with ciphertext.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & The text we want to encrypt or decrypt with some of Vigenere ciphers.\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & The key for Vigenere ciphering.\\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & The alphabet of Vigenere ciphering.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ciphertext for that input data if data is correct. 
+
+error message if data is incorrect. 
+\end{DoxyReturn}
+\Hypertarget{vigenere__ciphers_8cpp_a4f3beac17d2e7b256e5d105120600f13}\label{vigenere__ciphers_8cpp_a4f3beac17d2e7b256e5d105120600f13} 
+\index{vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}!self\_cipher\_key\_deciphering@{self\_cipher\_key\_deciphering}}
+\index{self\_cipher\_key\_deciphering@{self\_cipher\_key\_deciphering}!vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{self\_cipher\_key\_deciphering()}{self\_cipher\_key\_deciphering()}}
+{\footnotesize\ttfamily std\+::string self\+\_\+cipher\+\_\+key\+\_\+deciphering (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ciphertext,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function of Vigenere deciphering with gamma formed with selfkey from the ciphertext.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & The text we want to encrypt or decrypt with some of Vigenere ciphers.\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & The key for Vigenere ciphering.\\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & The alphabet of Vigenere ciphering.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ciphertext for that input data if data is correct. 
+
+error message if data is incorrect. 
+\end{DoxyReturn}
+\Hypertarget{vigenere__ciphers_8cpp_adc35c935f20a33a1f331d62ab948a0ef}\label{vigenere__ciphers_8cpp_adc35c935f20a33a1f331d62ab948a0ef} 
+\index{vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}!self\_open\_key\_ciphering@{self\_open\_key\_ciphering}}
+\index{self\_open\_key\_ciphering@{self\_open\_key\_ciphering}!vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{self\_open\_key\_ciphering()}{self\_open\_key\_ciphering()}}
+{\footnotesize\ttfamily std\+::string self\+\_\+open\+\_\+key\+\_\+ciphering (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function of Vigenere ciphering with gamma formed with selfkey from opentext.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & The text we want to encrypt or decrypt with some of Vigenere ciphers.\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & The key for Vigenere ciphering.\\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & The alphabet of Vigenere ciphering.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ciphertext for that input data if data is correct. 
+
+error message if data is incorrect. 
+\end{DoxyReturn}
+\Hypertarget{vigenere__ciphers_8cpp_a25da46e5921f820192e1f16be409ab2e}\label{vigenere__ciphers_8cpp_a25da46e5921f820192e1f16be409ab2e} 
+\index{vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}!self\_open\_key\_deciphering@{self\_open\_key\_deciphering}}
+\index{self\_open\_key\_deciphering@{self\_open\_key\_deciphering}!vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{self\_open\_key\_deciphering()}{self\_open\_key\_deciphering()}}
+{\footnotesize\ttfamily std\+::string self\+\_\+open\+\_\+key\+\_\+deciphering (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ciphertext,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function of Vigenere deciphering with gamma formed with selfkey from with opentext.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & The text we want to encrypt or decrypt with some of Vigenere ciphers.\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & The key for Vigenere ciphering.\\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & The alphabet of Vigenere ciphering.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ciphertext for that input data if data is correct. 
+
+error message if data is incorrect. 
+\end{DoxyReturn}
+\Hypertarget{vigenere__ciphers_8cpp_af0cfe06d5129f23dcff4acf8f747a137}\label{vigenere__ciphers_8cpp_af0cfe06d5129f23dcff4acf8f747a137} 
+\index{vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}!vigenere\_data\_is\_valid@{vigenere\_data\_is\_valid}}
+\index{vigenere\_data\_is\_valid@{vigenere\_data\_is\_valid}!vigenere\_ciphers.cpp@{vigenere\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{vigenere\_data\_is\_valid()}{vigenere\_data\_is\_valid()}}
+{\footnotesize\ttfamily void vigenere\+\_\+data\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The validation function for Vigenere ciphers.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & The text we want to encrypt or decrypt with some of Vigenere ciphers.\\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & The key for Vigenere ciphering.\\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & The alphabet of Vigenere ciphering.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em input\+\_\+data\+\_\+invalid} & with the suitable message in case of wrong alphabet, wrong key or wrong text. \\
+\hline
+\end{DoxyExceptions}

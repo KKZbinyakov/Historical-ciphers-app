@@ -1,0 +1,236 @@
+\doxysection{affine\+\_\+ciphers/\+Affine\+\_\+ciphers.cpp File Reference}
+\hypertarget{_affine__ciphers_8cpp}{}\label{_affine__ciphers_8cpp}\index{affine\_ciphers/Affine\_ciphers.cpp@{affine\_ciphers/Affine\_ciphers.cpp}}
+{\ttfamily \#include "{}Affine\+\_\+ciphers.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_affine__ciphers_8cpp_a416bb0c2856bddb53c89915f9ae5542c}{mutual\+\_\+simple}} (int a, int b)
+\item 
+void \mbox{\hyperlink{_affine__ciphers_8cpp_a3bb1a3664018850dab00f52655fe3ab0}{replacement\+\_\+cipher\+\_\+data\+\_\+is\+\_\+valid}} (const std\+::string \&text, const std\+::string \&key, const std\+::string \&alphabet)
+\item 
+void \mbox{\hyperlink{_affine__ciphers_8cpp_ae971d1807a2010eabdb75b3bd393b3e7}{affine\+\_\+cipher\+\_\+data\+\_\+is\+\_\+valid}} (const std\+::string \&text, const std\+::vector$<$ int $>$ \&key, const std\+::string \&alphabet)
+\item 
+void \mbox{\hyperlink{_affine__ciphers_8cpp_a38190e6d22fed7da3c1eb5c15c1b70ce}{affine\+\_\+reccurent\+\_\+cipher\+\_\+data\+\_\+is\+\_\+valid}} (const std\+::string \&text, const std\+::vector$<$ int $>$ \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{_affine__ciphers_8cpp_abc97eea87b2b555ce53373b91b64b870}{simple\+\_\+replacement\+\_\+encryption}} (const std\+::string \&text, const std\+::string \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{_affine__ciphers_8cpp_a29c900a9562e9288a2456a36a831a116}{simple\+\_\+replacement\+\_\+decryption}} (const std\+::string \&ciphertext, const std\+::string \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{_affine__ciphers_8cpp_a83838d8695865679f64c762a3efdc46f}{affine\+\_\+encryption}} (const std\+::string \&text, const std\+::vector$<$ int $>$ \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{_affine__ciphers_8cpp_ac1c6d330f66484cb6e260d54a6143c9c}{affine\+\_\+decryption}} (const std\+::string \&ciphertext, const std\+::vector$<$ int $>$ \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{_affine__ciphers_8cpp_a12525c2adf17f3ef5b75759885ad3cf2}{affine\+\_\+reccurent\+\_\+encryption}} (const std\+::string \&text, const std\+::vector$<$ int $>$ \&key, const std\+::string \&alphabet)
+\item 
+std\+::string \mbox{\hyperlink{_affine__ciphers_8cpp_a405d45e0f593f24538e1e67b2b84f83e}{affine\+\_\+reccurent\+\_\+decryption}} (const std\+::string \&ciphertext, const std\+::vector$<$ int $>$ \&key, const std\+::string \&alphabet)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains affine ciphers encryption and decryption functions 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_affine__ciphers_8cpp_ae971d1807a2010eabdb75b3bd393b3e7}\label{_affine__ciphers_8cpp_ae971d1807a2010eabdb75b3bd393b3e7} 
+\index{Affine\_ciphers.cpp@{Affine\_ciphers.cpp}!affine\_cipher\_data\_is\_valid@{affine\_cipher\_data\_is\_valid}}
+\index{affine\_cipher\_data\_is\_valid@{affine\_cipher\_data\_is\_valid}!Affine\_ciphers.cpp@{Affine\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{affine\_cipher\_data\_is\_valid()}{affine\_cipher\_data\_is\_valid()}}
+{\footnotesize\ttfamily void affine\+\_\+cipher\+\_\+data\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::vector$<$ int $>$ \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function checks whether affine cipher data is valid
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & is encrypted or decrypted text \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is two numbers, using during encryption and decryption \\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & is string, that contains all symbols, which can be used in input text\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em input\+\_\+data\+\_\+invalid} & if the key and the power of alphabet are not mutual simple or if text contains symbol that not in the alphabet or if one or both of the keys are not digits \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{_affine__ciphers_8cpp_ac1c6d330f66484cb6e260d54a6143c9c}\label{_affine__ciphers_8cpp_ac1c6d330f66484cb6e260d54a6143c9c} 
+\index{Affine\_ciphers.cpp@{Affine\_ciphers.cpp}!affine\_decryption@{affine\_decryption}}
+\index{affine\_decryption@{affine\_decryption}!Affine\_ciphers.cpp@{Affine\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{affine\_decryption()}{affine\_decryption()}}
+{\footnotesize\ttfamily std\+::string affine\+\_\+decryption (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ciphertext,  }\item[{const std\+::vector$<$ int $>$ \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function is doing affine decryption of the text. The encryption algorithm is as follows\+: function accepts text and two numbers, a-\/key and b-\/key. After that we are finding values of reversed a-\/key for every a-\/key. The remainder of dividing the product of the key a and the inverse key a by the power of the alphabet must be equal to one. After that we find position of every symbol of the text in alphabet, substract b-\/key from it and multiply it by inverse key a. After that we replace every text symbol with symbol, that is located in the alphabet position, which we found after calculations
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & is encrypted text \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is pair of integer numbers inside a vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & is string, that contains all symbols, which can be used in input text\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted text, error message if error occured 
+\end{DoxyReturn}
+\Hypertarget{_affine__ciphers_8cpp_a83838d8695865679f64c762a3efdc46f}\label{_affine__ciphers_8cpp_a83838d8695865679f64c762a3efdc46f} 
+\index{Affine\_ciphers.cpp@{Affine\_ciphers.cpp}!affine\_encryption@{affine\_encryption}}
+\index{affine\_encryption@{affine\_encryption}!Affine\_ciphers.cpp@{Affine\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{affine\_encryption()}{affine\_encryption()}}
+{\footnotesize\ttfamily std\+::string affine\+\_\+encryption (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::vector$<$ int $>$ \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function is doing affine encryption of the text. The encryption algorithm is as follows\+: function accepts text and two numbers, a-\/key and b-\/key. After that we find the position of every text symbol in alphabet, multiply this number by a-\/key and adding up with b-\/key. If result is larger then alphabet power we replace result with it\textquotesingle{}s remainder of the division by alphabet power. After that we replace every text symbol with symbol, that is located in the alphabet position, which we found after calculations
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & is encrypted text \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is pair of integer numbers inside a vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & is string, that contains all symbols, which can be used in input text\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted text, error message if error occured 
+\end{DoxyReturn}
+\Hypertarget{_affine__ciphers_8cpp_a38190e6d22fed7da3c1eb5c15c1b70ce}\label{_affine__ciphers_8cpp_a38190e6d22fed7da3c1eb5c15c1b70ce} 
+\index{Affine\_ciphers.cpp@{Affine\_ciphers.cpp}!affine\_reccurent\_cipher\_data\_is\_valid@{affine\_reccurent\_cipher\_data\_is\_valid}}
+\index{affine\_reccurent\_cipher\_data\_is\_valid@{affine\_reccurent\_cipher\_data\_is\_valid}!Affine\_ciphers.cpp@{Affine\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{affine\_reccurent\_cipher\_data\_is\_valid()}{affine\_reccurent\_cipher\_data\_is\_valid()}}
+{\footnotesize\ttfamily void affine\+\_\+reccurent\+\_\+cipher\+\_\+data\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::vector$<$ int $>$ \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function checks whether recurrent affine cipher data is valid
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & is encrypted or decrypted text \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is four numbers, using during encryption and decryption \\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & is string, that contains all symbols, which can be used in input text\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em input\+\_\+data\+\_\+invalid} & if the key and the power of alphabet are not mutual simple or if text contains symbol that not in the alphabet \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{_affine__ciphers_8cpp_a405d45e0f593f24538e1e67b2b84f83e}\label{_affine__ciphers_8cpp_a405d45e0f593f24538e1e67b2b84f83e} 
+\index{Affine\_ciphers.cpp@{Affine\_ciphers.cpp}!affine\_reccurent\_decryption@{affine\_reccurent\_decryption}}
+\index{affine\_reccurent\_decryption@{affine\_reccurent\_decryption}!Affine\_ciphers.cpp@{Affine\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{affine\_reccurent\_decryption()}{affine\_reccurent\_decryption()}}
+{\footnotesize\ttfamily std\+::string affine\+\_\+reccurent\+\_\+decryption (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ciphertext,  }\item[{const std\+::vector$<$ int $>$ \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function is doing affine recurrent decryption of the text. The decryption algorithm is as follows\+: function accepts text and four numbers, two a-\/keys and two b-\/keys.\+After that we are making two vectors of keys, which have the same length as the text. In a-\/keys vector each subsequent key is a product of the previous two. In b-\/keys vector each subsequent key is the amount of the previous two. After that we are finding values of reversed a-\/key for every a-\/key. The remainder of dividing the product of the key a and the inverse key a by the power of the alphabet must be equal to one. After that we find position of every symbol of the text in alphabet, substract b-\/key in the appropriate vector position from it and multiply it by inverse a-\/key in the appropriate vector position. After that we replace every text symbol with symbol, that is located in the alphabet position, which we found after calculations
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & is decrypted text \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is two pairs of integer numbers inside a vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & is string, that contains all symbols, which can be used in input text\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted text, error message if error occured 
+\end{DoxyReturn}
+\Hypertarget{_affine__ciphers_8cpp_a12525c2adf17f3ef5b75759885ad3cf2}\label{_affine__ciphers_8cpp_a12525c2adf17f3ef5b75759885ad3cf2} 
+\index{Affine\_ciphers.cpp@{Affine\_ciphers.cpp}!affine\_reccurent\_encryption@{affine\_reccurent\_encryption}}
+\index{affine\_reccurent\_encryption@{affine\_reccurent\_encryption}!Affine\_ciphers.cpp@{Affine\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{affine\_reccurent\_encryption()}{affine\_reccurent\_encryption()}}
+{\footnotesize\ttfamily std\+::string affine\+\_\+reccurent\+\_\+encryption (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::vector$<$ int $>$ \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function is doing recurrent affine encryption of the text. The encryption algorithm is as follows\+: function accepts text and four numbers, two a-\/keys and two b-\/keys. After that we are making two vectors of keys, which have the same length as the text. In a-\/keys vector each subsequent key is a product of the previous two. In b-\/keys vector each subsequent key is the amount of the previous two. After that we find the position of every text symbol in alphabet, multiply this number by a-\/key in the appropriate position and adding up with b-\/key in the appropriate vector position. If result is larger then alphabet power we replace result with it\textquotesingle{}s remainder of the division by alphabet power. After that we replace every text symbol with symbol, that is located in the alphabet position, which we found after calculations
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & is encrypted text \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is two pairs of integer numbers inside a vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & is string, that contains all symbols, which can be used in input text\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted text, error message if error occured 
+\end{DoxyReturn}
+\Hypertarget{_affine__ciphers_8cpp_a416bb0c2856bddb53c89915f9ae5542c}\label{_affine__ciphers_8cpp_a416bb0c2856bddb53c89915f9ae5542c} 
+\index{Affine\_ciphers.cpp@{Affine\_ciphers.cpp}!mutual\_simple@{mutual\_simple}}
+\index{mutual\_simple@{mutual\_simple}!Affine\_ciphers.cpp@{Affine\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{mutual\_simple()}{mutual\_simple()}}
+{\footnotesize\ttfamily bool mutual\+\_\+simple (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+The function checks whether two numbers are mutually prime
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & first number \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & second number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Boolean true if numbers are mutual simple, boolean false if they don\textquotesingle{}t 
+\end{DoxyReturn}
+\Hypertarget{_affine__ciphers_8cpp_a3bb1a3664018850dab00f52655fe3ab0}\label{_affine__ciphers_8cpp_a3bb1a3664018850dab00f52655fe3ab0} 
+\index{Affine\_ciphers.cpp@{Affine\_ciphers.cpp}!replacement\_cipher\_data\_is\_valid@{replacement\_cipher\_data\_is\_valid}}
+\index{replacement\_cipher\_data\_is\_valid@{replacement\_cipher\_data\_is\_valid}!Affine\_ciphers.cpp@{Affine\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{replacement\_cipher\_data\_is\_valid()}{replacement\_cipher\_data\_is\_valid()}}
+{\footnotesize\ttfamily void replacement\+\_\+cipher\+\_\+data\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function checks whether replacement cipher data is valid
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & is encrypted or decrypted text \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is string of mixed alphabet symbols based on the order of which encryption and decryption are taking place\\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & is string, that contains all symbols, which can be used in input text\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em input\+\_\+data\+\_\+invalid} & if the key and the alphabet have different length or if alphabet contains two similar symbols or if key contains two similar symbols or if key contains symbol that not in the alphabet or if text contains symbol that not in the alphabet \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{_affine__ciphers_8cpp_a29c900a9562e9288a2456a36a831a116}\label{_affine__ciphers_8cpp_a29c900a9562e9288a2456a36a831a116} 
+\index{Affine\_ciphers.cpp@{Affine\_ciphers.cpp}!simple\_replacement\_decryption@{simple\_replacement\_decryption}}
+\index{simple\_replacement\_decryption@{simple\_replacement\_decryption}!Affine\_ciphers.cpp@{Affine\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{simple\_replacement\_decryption()}{simple\_replacement\_decryption()}}
+{\footnotesize\ttfamily std\+::string simple\+\_\+replacement\+\_\+decryption (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{ciphertext,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function is doing simple replacement decryption of the text. The decryption algorithm is as follows\+: function accepts alphabet and mixed alphabet named key. During encryption we find the position of every text symbol in key and replace every letter with symbol, which is located on the same position in the alphabet
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & is decrypted text \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is string of mixed alphabet symbols based on the order of which encryption and decryption are taking place\\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & is string, that contains all symbols, which can be used in input text\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Decrypted text, error message if error occured 
+\end{DoxyReturn}
+\Hypertarget{_affine__ciphers_8cpp_abc97eea87b2b555ce53373b91b64b870}\label{_affine__ciphers_8cpp_abc97eea87b2b555ce53373b91b64b870} 
+\index{Affine\_ciphers.cpp@{Affine\_ciphers.cpp}!simple\_replacement\_encryption@{simple\_replacement\_encryption}}
+\index{simple\_replacement\_encryption@{simple\_replacement\_encryption}!Affine\_ciphers.cpp@{Affine\_ciphers.cpp}}
+\doxysubsubsection{\texorpdfstring{simple\_replacement\_encryption()}{simple\_replacement\_encryption()}}
+{\footnotesize\ttfamily std\+::string simple\+\_\+replacement\+\_\+encryption (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::string \&}]{key,  }\item[{const std\+::string \&}]{alphabet }\end{DoxyParamCaption})}
+
+The function is doing simple replacement encryption of the text. The encryption algorithm is as follows\+: function accepts alphabet and mixed alphabet named key. During encryption we find the position of every text symbol in alphabet and replace every letter with symbol, which is located on the same position in the key
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & is encrypted text \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & is string of mixed alphabet symbols based on the order of which encryption and decryption are taking place\\
+\hline
+\mbox{\texttt{ in}}  & {\em alphabet} & is string, that contains all symbols, which can be used in input text\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted text, error message if error occured 
+\end{DoxyReturn}

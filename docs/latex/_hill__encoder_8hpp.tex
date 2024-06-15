@@ -1,0 +1,165 @@
+\doxysection{hill\+\_\+cipher/\+Hill\+\_\+encoder.hpp File Reference}
+\hypertarget{_hill__encoder_8hpp}{}\label{_hill__encoder_8hpp}\index{hill\_cipher/Hill\_encoder.hpp@{hill\_cipher/Hill\_encoder.hpp}}
+{\ttfamily \#include "{}exceptions.\+hpp"{}}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$numeric$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_hill__encoder_8hpp_a4880685e5e73f9900d0db21ac2066bc4}{hill\+\_\+data\+\_\+is\+\_\+valid}} (const std\+::string \&text, const std\+::string \&ABC, \mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&Key)
+\item 
+int \mbox{\hyperlink{_hill__encoder_8hpp_ae2826c22cc539bfd81e72afe7b468a96}{greatest\+\_\+common\+\_\+divisor}} (int a, int b)
+\item 
+std\+::string \mbox{\hyperlink{_hill__encoder_8hpp_a0601ce8e79b9b8a94efeda83c5352557}{Hill\+\_\+cipher\+\_\+encoder}} (std\+::string ABC, std\+::string Text, \mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&Key\+\_\+matrix)
+\item 
+std\+::string \mbox{\hyperlink{_hill__encoder_8hpp_ab77b58d889709394f94d315750db247f}{Hill\+\_\+cipher\+\_\+decoder}} (std\+::string ABC, std\+::string Cipher\+\_\+\+Text, \mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&Key\+\_\+matrix)
+\item 
+std\+::string \mbox{\hyperlink{_hill__encoder_8hpp_a4e9b14e47fe3b962679dfc3b43ad23a1}{Rec\+\_\+\+Hill\+\_\+cipher\+\_\+encoder}} (std\+::string ABC, std\+::string Text, \mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&Key\+\_\+matrix1, \mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&Key\+\_\+matrix2)
+\item 
+std\+::string \mbox{\hyperlink{_hill__encoder_8hpp_a239b18c734e24d3a10764d53ab314baf}{Rec\+\_\+\+Hill\+\_\+cipher\+\_\+decoder}} (std\+::string ABC, std\+::string Cipher\+\_\+\+Text, \mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&Key\+\_\+matrix1, \mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&Key\+\_\+matrix2)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file describes the matrix class and functions required to implement the Hill cipher. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_hill__encoder_8hpp_ae2826c22cc539bfd81e72afe7b468a96}\label{_hill__encoder_8hpp_ae2826c22cc539bfd81e72afe7b468a96} 
+\index{Hill\_encoder.hpp@{Hill\_encoder.hpp}!greatest\_common\_divisor@{greatest\_common\_divisor}}
+\index{greatest\_common\_divisor@{greatest\_common\_divisor}!Hill\_encoder.hpp@{Hill\_encoder.hpp}}
+\doxysubsubsection{\texorpdfstring{greatest\_common\_divisor()}{greatest\_common\_divisor()}}
+{\footnotesize\ttfamily int greatest\+\_\+common\+\_\+divisor (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+Finding the largest common divisor.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & the first number in question. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & the second number in question.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+greatest common divisor. 
+\end{DoxyReturn}
+\Hypertarget{_hill__encoder_8hpp_ab77b58d889709394f94d315750db247f}\label{_hill__encoder_8hpp_ab77b58d889709394f94d315750db247f} 
+\index{Hill\_encoder.hpp@{Hill\_encoder.hpp}!Hill\_cipher\_decoder@{Hill\_cipher\_decoder}}
+\index{Hill\_cipher\_decoder@{Hill\_cipher\_decoder}!Hill\_encoder.hpp@{Hill\_encoder.hpp}}
+\doxysubsubsection{\texorpdfstring{Hill\_cipher\_decoder()}{Hill\_cipher\_decoder()}}
+{\footnotesize\ttfamily std\+::string Hill\+\_\+cipher\+\_\+decoder (\begin{DoxyParamCaption}\item[{std\+::string}]{ABC,  }\item[{std\+::string}]{Cipher\+\_\+\+Text,  }\item[{\mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&}]{Key\+\_\+matrix }\end{DoxyParamCaption})}
+
+Implementation of Hill cipher decryption.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ABC} & alphabet. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Cipher\+\_\+\+Text} & The text that is being decrypted. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Key\+\_\+matrix} & The key matrix.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cipher text. 
+\end{DoxyReturn}
+\Hypertarget{_hill__encoder_8hpp_a0601ce8e79b9b8a94efeda83c5352557}\label{_hill__encoder_8hpp_a0601ce8e79b9b8a94efeda83c5352557} 
+\index{Hill\_encoder.hpp@{Hill\_encoder.hpp}!Hill\_cipher\_encoder@{Hill\_cipher\_encoder}}
+\index{Hill\_cipher\_encoder@{Hill\_cipher\_encoder}!Hill\_encoder.hpp@{Hill\_encoder.hpp}}
+\doxysubsubsection{\texorpdfstring{Hill\_cipher\_encoder()}{Hill\_cipher\_encoder()}}
+{\footnotesize\ttfamily std\+::string Hill\+\_\+cipher\+\_\+encoder (\begin{DoxyParamCaption}\item[{std\+::string}]{ABC,  }\item[{std\+::string}]{Text,  }\item[{\mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&}]{Key\+\_\+matrix }\end{DoxyParamCaption})}
+
+Implementation of Hill cipher encryption.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ABC} & alphabet. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Text} & The text that is being encrypted. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Key\+\_\+matrix} & The key matrix.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted text. 
+\end{DoxyReturn}
+\Hypertarget{_hill__encoder_8hpp_a4880685e5e73f9900d0db21ac2066bc4}\label{_hill__encoder_8hpp_a4880685e5e73f9900d0db21ac2066bc4} 
+\index{Hill\_encoder.hpp@{Hill\_encoder.hpp}!hill\_data\_is\_valid@{hill\_data\_is\_valid}}
+\index{hill\_data\_is\_valid@{hill\_data\_is\_valid}!Hill\_encoder.hpp@{Hill\_encoder.hpp}}
+\doxysubsubsection{\texorpdfstring{hill\_data\_is\_valid()}{hill\_data\_is\_valid()}}
+{\footnotesize\ttfamily void hill\+\_\+data\+\_\+is\+\_\+valid (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text,  }\item[{const std\+::string \&}]{ABC,  }\item[{\mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&}]{Key }\end{DoxyParamCaption})}
+
+A function that checks the correctness of the entered data for the Hill cipher.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em text} & The text being checked for correctness. \\
+\hline
+\mbox{\texttt{ in}}  & {\em ABC} & The alphabet being checked for correctness. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Key} & The key is a matrix that is checked for correctness.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Alphabet} & letter repeat error when alphabet letter repeat error. \\
+\hline
+{\em Unknown} & text symbol when there is a symbol in the text that is not in the alphabet. \\
+\hline
+{\em Invalid} & Key matrix when the determinant of the matrix does not satisfy the conditions of the algorithm. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{_hill__encoder_8hpp_a239b18c734e24d3a10764d53ab314baf}\label{_hill__encoder_8hpp_a239b18c734e24d3a10764d53ab314baf} 
+\index{Hill\_encoder.hpp@{Hill\_encoder.hpp}!Rec\_Hill\_cipher\_decoder@{Rec\_Hill\_cipher\_decoder}}
+\index{Rec\_Hill\_cipher\_decoder@{Rec\_Hill\_cipher\_decoder}!Hill\_encoder.hpp@{Hill\_encoder.hpp}}
+\doxysubsubsection{\texorpdfstring{Rec\_Hill\_cipher\_decoder()}{Rec\_Hill\_cipher\_decoder()}}
+{\footnotesize\ttfamily std\+::string Rec\+\_\+\+Hill\+\_\+cipher\+\_\+decoder (\begin{DoxyParamCaption}\item[{std\+::string}]{ABC,  }\item[{std\+::string}]{Cipher\+\_\+\+Text,  }\item[{\mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&}]{Key\+\_\+matrix1,  }\item[{\mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&}]{Key\+\_\+matrix2 }\end{DoxyParamCaption})}
+
+Implementation of Hill\textquotesingle{}s recurrent cipher decryption.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ABC} & alphabet. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Cipher\+\_\+\+Text} & The text that is being decrypted. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Key\+\_\+matrix1} & The key matrix. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Key\+\_\+matrix2} & The key matrix.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cipher text. 
+\end{DoxyReturn}
+\Hypertarget{_hill__encoder_8hpp_a4e9b14e47fe3b962679dfc3b43ad23a1}\label{_hill__encoder_8hpp_a4e9b14e47fe3b962679dfc3b43ad23a1} 
+\index{Hill\_encoder.hpp@{Hill\_encoder.hpp}!Rec\_Hill\_cipher\_encoder@{Rec\_Hill\_cipher\_encoder}}
+\index{Rec\_Hill\_cipher\_encoder@{Rec\_Hill\_cipher\_encoder}!Hill\_encoder.hpp@{Hill\_encoder.hpp}}
+\doxysubsubsection{\texorpdfstring{Rec\_Hill\_cipher\_encoder()}{Rec\_Hill\_cipher\_encoder()}}
+{\footnotesize\ttfamily std\+::string Rec\+\_\+\+Hill\+\_\+cipher\+\_\+encoder (\begin{DoxyParamCaption}\item[{std\+::string}]{ABC,  }\item[{std\+::string}]{Text,  }\item[{\mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&}]{Key\+\_\+matrix1,  }\item[{\mbox{\hyperlink{class_matrix__class}{Matrix\+\_\+class}} \&}]{Key\+\_\+matrix2 }\end{DoxyParamCaption})}
+
+Implementation of Hill\textquotesingle{}s recurrent cipher encryption.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ABC} & alphabet. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Text} & The text that is being encrypted. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Key\+\_\+matrix1} & The key matrix. \\
+\hline
+\mbox{\texttt{ in}}  & {\em Key\+\_\+matrix2} & The key matrix.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encrypted text. 
+\end{DoxyReturn}

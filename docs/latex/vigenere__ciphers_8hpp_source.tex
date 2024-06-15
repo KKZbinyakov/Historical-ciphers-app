@@ -1,0 +1,36 @@
+\doxysection{vigenere\+\_\+ciphers.\+hpp}
+\hypertarget{vigenere__ciphers_8hpp_source}{}\label{vigenere__ciphers_8hpp_source}\index{vigenere\_ciphers/vigenere\_ciphers.hpp@{vigenere\_ciphers/vigenere\_ciphers.hpp}}
+\mbox{\hyperlink{vigenere__ciphers_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VIGENERE\_CIPHERS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VIGENERE\_CIPHERS\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}exceptions.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00016\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vigenere__ciphers_8hpp_af0cfe06d5129f23dcff4acf8f747a137}{vigenere\_data\_is\_valid}}(\textcolor{keyword}{const}\ std::string\ \&text,\ \textcolor{keyword}{const}\ std::string\ \&key,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00018\ std::string\ \mbox{\hyperlink{vigenere__ciphers_8hpp_a13d41dc613ba26de8006238ef286139c}{repeat\_key\_ciphering}}(\textcolor{keyword}{const}\ std::string\ \&text,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00021\ std::string\ \mbox{\hyperlink{vigenere__ciphers_8hpp_acf41c2cca2f00964ccc6cf9c8f293d0a}{repeat\_key\_deciphering}}(\textcolor{keyword}{const}\ std::string\ \&ciphertext,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00024\ std::string\ \mbox{\hyperlink{vigenere__ciphers_8hpp_adc35c935f20a33a1f331d62ab948a0ef}{self\_open\_key\_ciphering}}(\textcolor{keyword}{const}\ std::string\ \&text,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00027\ std::string\ \mbox{\hyperlink{vigenere__ciphers_8hpp_a25da46e5921f820192e1f16be409ab2e}{self\_open\_key\_deciphering}}(\textcolor{keyword}{const}\ std::string\ \&ciphertext,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00030\ std::string\ \mbox{\hyperlink{vigenere__ciphers_8hpp_a310c90a73332ca1b8a5844349bec8951}{self\_cipher\_key\_ciphering}}(\textcolor{keyword}{const}\ std::string\ \&text,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00033\ std::string\ \mbox{\hyperlink{vigenere__ciphers_8hpp_a4f3beac17d2e7b256e5d105120600f13}{self\_cipher\_key\_deciphering}}(\textcolor{keyword}{const}\ std::string\ \&ciphertext,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&key,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&alphabet);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
