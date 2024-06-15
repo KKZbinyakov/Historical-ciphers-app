@@ -72,7 +72,7 @@ License for Cmake: https://gitlab.kitware.com/cmake/cmake/raw/master/Copyright.t
 
 Currently available in the Historical-ciphers-app are: 
 - Affine ciphers;
-- simple substitution cipher; 
+- Simple substitution cipher; 
 - Hill ciphers; 
 - Vigener ciphers; 
 - Magma cipher.
