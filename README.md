@@ -15,7 +15,7 @@ server project page](https://github.com/KKZbinyakov/Historical-ciphers-app/tree/
 
 The documentation available as of the date of this release is
 included in HTML format. The most up-to-date documentation can be found at
-[main](https://github.com/KKZbinyakov/Historical-ciphers-app/tree/main).
+[main](https://github.com/KKZbinyakov/Historical-ciphers-app/tree/main/docs/html/index.html).
 
 ## Installation
 
