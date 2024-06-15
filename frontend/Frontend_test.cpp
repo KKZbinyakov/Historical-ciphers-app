@@ -6,7 +6,7 @@
 /**
  * \file Frontend_test.cpp
  *
- * This file contains affine ciphers testing for errors, ciphering and deciphering results
+ * This file contains frontend tests
  *
  */
 
