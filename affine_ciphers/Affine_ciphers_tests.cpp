@@ -6,13 +6,6 @@
 #include <string>
 #include <vector>
 
-/**
- * \file Affine_ciphers_tests.cpp
- *
- * This file contains affine ciphers testing for errors, ciphering and
- * deciphering results
- *
- */
 
 TEST_CASE("Mutual simple numbers") { CHECK(mutual_simple(13, 19) == 1); }
 
