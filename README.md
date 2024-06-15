@@ -96,10 +96,10 @@ Currently available in the Historical-ciphers-app are:
 ![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/REC_HILL.jpg?raw=true)
 - For the Vigener cipher with the repetition of a short slogan, the user enters the key, the alphabet and the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
 ![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/REPEAT_KEY.jpg?raw=true)
-- For a Vision cipher with a self-keyed ciphertext, the user enters the key, the alphabet, and the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
-![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/CIPHER_KEY.jpg?raw=true)
 - For a Vision cipher with a self-key in plaintext, the user enters the key, the alphabet, and the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
 ![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/OPEN_KEY.jpg?raw=true)
+- For a Vision cipher with a self-keyed ciphertext, the user enters the key, the alphabet, and the text that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/CIPHER_KEY.jpg?raw=true)
 - For a magma cipher with a normal mode of operation, the user enters the key and the data that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted data:
 ![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/MAGMA.jpg?raw=true)
 - For a magma cipher with a gamma mode of operation, the user enters the key, the sync link, and the data that he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted data:
