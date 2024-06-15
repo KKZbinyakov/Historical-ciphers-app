@@ -24,7 +24,7 @@ For correct installation and further use of the system, access to the files of t
 Установка на Windows:
 На Windows можно использовать один из пакетных менеджеров.
 
--vcpkg
+- vcpkg
 
 Например, установка Qt6 через менеджер vcpkg:
 
@@ -34,7 +34,7 @@ For correct installation and further use of the system, access to the files of t
 
 ```vcpkg install qtbase```
 
--MSYS2/Packman
+- MSYS2/Packman
 
 Установка Qt через MSYS с помощью пакетного менеджера packman:
 
@@ -48,13 +48,13 @@ For correct installation and further use of the system, access to the files of t
 
 ```pacman -S mingw-w64-x86_64-qt-creator```
 
--chocolatey
+- chocolatey
 
 Установка Qt6 с Qt Creator через менеджер chocolatey:
 
 ```choco install -y qt6-base-dev cmake qtcreator```
 
--winget
+- winget
 
 Установка Qt6 через менеджер winget:
 
