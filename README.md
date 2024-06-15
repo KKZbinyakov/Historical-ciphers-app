@@ -64,9 +64,11 @@ Installing Qt6 via the winget manager:
 
 ## Licensing
 
-License for QT: https://www.qt.io/terms-conditions
+License for QT you can find [here](https://www.qt.io/terms-conditions).
 
-License for Cmake: https://gitlab.kitware.com/cmake/cmake/raw/master/Copyright.txt
+License for Cmake you can find [here](https://gitlab.kitware.com/cmake/cmake/raw/master/Copyright.txt).
+
+License for GNU you can find [here](https://www.gnu.org/licenses/licenses.ru).
 
 ## What is available in Historical-ciphers-app.
 
