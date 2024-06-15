@@ -64,6 +64,7 @@ For correct installation and further use of the system, access to the files of t
 ## Licensing
 
 License for QT: https://www.qt.io/terms-conditions
+
 License for Cmake: https://gitlab.kitware.com/cmake/cmake/raw/master/Copyright.txt
 
 ## What is available in Historical-ciphers-app.
