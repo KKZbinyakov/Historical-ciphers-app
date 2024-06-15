@@ -1,12 +1,11 @@
 #include "mainwindow.h"
 
-std::vector<uint8_t> hexStringToVector(const QString& hexString)
+std::vector<uint8_t> hexStringToVector(const std::string& hexString)
 {
     std::vector<uint8_t> result;
     for (int i = 0; i<hexString.length(); i+=3) {
-        QString byteString = hexString.mid(i, 2);
-        bool ok;
-        uint8_t byte = byteString.toUInt(&ok, 16);
+        std::string byteString = hexString.substr(i, 2);
+        uint8_t byte = stoi(byteString, 0, 16);
         result.push_back(byte);
     }
     return result;
@@ -602,24 +601,24 @@ void MainWindow::OnEncryptButtonClicked()
         {
             if (lastClickedButton->text().toStdString() == "Простой замены")
             {
-                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text());
-                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text());
+                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
+                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
                 std::string result = vectorToHexString(magmaEncrypt(data, key));
                 outputLine->setText(QString::fromStdString(result));
             }
             if (lastClickedButton->text().toStdString() == "Гаммирования")
             {
-                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text());
-                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text());
-                std::vector<uint8_t> synchrolink = hexStringToVector(magma_lines[2]->text());
+                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
+                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
+                std::vector<uint8_t> synchrolink = hexStringToVector(magma_lines[2]->text().toStdString());
                 std::string result = vectorToHexString(magmaGammaEncrypt(data, key, synchrolink));
                 outputLine->setText(QString::fromStdString(result));
             }
             if (lastClickedButton->text().toStdString() == "Гаммирования с обратной связью")
             {
-                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text());
-                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text());
-                std::vector<uint8_t> synchrolink = hexStringToVector(magma_lines[2]->text());
+                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
+                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
+                std::vector<uint8_t> synchrolink = hexStringToVector(magma_lines[2]->text().toStdString());
                 std::string result = vectorToHexString(magmaFeedbackGammaEncrypt(data, key, synchrolink));
                 outputLine->setText(QString::fromStdString(result));
             }
@@ -756,24 +755,24 @@ void MainWindow::OnDecryptButtonClicked()
         {
             if (lastClickedButton->text().toStdString() == "Простой замены")
             {
-                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text());
-                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text());
+                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
+                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
                 std::string result = vectorToHexString(magmaDecrypt(data, key));
                 outputLine->setText(QString::fromStdString(result));
             }
             if (lastClickedButton->text().toStdString() == "Гаммирования")
             {
-                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text());
-                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text());
-                std::vector<uint8_t> synchrolink = hexStringToVector(magma_lines[2]->text());
+                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
+                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
+                std::vector<uint8_t> synchrolink = hexStringToVector(magma_lines[2]->text().toStdString());
                 std::string result = vectorToHexString(magmaGammaDecrypt(data, key, synchrolink));
                 outputLine->setText(QString::fromStdString(result));
             }
             if (lastClickedButton->text().toStdString() == "Гаммирования с обратной связью")
             {
-                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text());
-                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text());
-                std::vector<uint8_t> synchrolink = hexStringToVector(magma_lines[2]->text());
+                std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
+                std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
+                std::vector<uint8_t> synchrolink = hexStringToVector(magma_lines[2]->text().toStdString());
                 std::string result = vectorToHexString(magmaFeedbackGammaDecrypt(data, key, synchrolink));
                 outputLine->setText(QString::fromStdString(result));
             }

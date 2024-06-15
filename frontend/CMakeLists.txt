@@ -13,3 +13,10 @@ set(CMAKE_AUTOUIC ON)
 add_executable(main_app Historical_ciphers_app.cpp Functions.cpp mainwindow.h)
 target_include_directories(main_app PUBLIC ../affine_ciphers ../hill_cipher ../magma_cipher ../vigenere_ciphers ../external/exceptions)
 target_link_libraries(main_app Qt6::Widgets affine_ciphers hill_cipher magma_cipher vigenere_ciphers exceptions)
+
+# Добавить тесты
+add_executable(frontend_tests Frontend_test.cpp mainwindow.h Functions.cpp)
+target_include_directories(frontend_tests PUBLIC ../affine_ciphers ../hill_cipher ../magma_cipher ../vigenere_ciphers ../external/doctest ../external/exceptions)
+target_link_libraries(frontend_tests Qt6::Widgets doctest affine_ciphers hill_cipher magma_cipher vigenere_ciphers exceptions)
+
+add_test(NAME FrontendTest COMMAND frontend_tests)

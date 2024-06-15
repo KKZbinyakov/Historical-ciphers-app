@@ -95,5 +95,5 @@ private:
     QPushButton *lastClickedButton = nullptr;
 };
 
-std::vector<uint8_t> hexStringToVector(const QString& hexString);
+std::vector<uint8_t> hexStringToVector(const std::string& hexString);
 std::string vectorToHexString(std::vector<uint8_t> vector);
