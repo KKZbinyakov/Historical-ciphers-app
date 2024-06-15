@@ -267,7 +267,7 @@ void MainWindow::OnCipherSelected()
         lastClickedButton = button;
     }
 
-    if (comboBox->currentText().toStdString() == "Афинные шифры")
+    if (comboBox->currentText().toStdString() == "Affine ciphers")
     {
         default_lines[0]->show();
         default_lines[1]->show();
@@ -282,13 +282,13 @@ void MainWindow::OnCipherSelected()
             otherLine->clear();
             otherLine->hide();
         }
-        if (lastClickedButton->text().toStdString() == "Шифр простой замены")
+        if (lastClickedButton->text().toStdString() == "Simple replacement")
         {
             affine_labels[0]->show();
             affine_lines[0]->show();
             affine_lines[0]->setText("abcdefghijklmnopqrstuvwxyz");
         }
-        if (lastClickedButton->text().toStdString() == "Афинный шифр")
+        if (lastClickedButton->text().toStdString() == "Affine")
         {
             affine_labels[1]->show();
             affine_labels[2]->show();
@@ -297,7 +297,7 @@ void MainWindow::OnCipherSelected()
             affine_lines[2]->show();
             affine_lines[2]->setText("1");
         }
-        if (lastClickedButton->text().toStdString() == "Афинный рекуррентный шифр")
+        if (lastClickedButton->text().toStdString() == "Recurrent affine")
         {
             for (int i = 1; i < affine_labels.size(); ++i)
             {
@@ -311,7 +311,7 @@ void MainWindow::OnCipherSelected()
         }
     }
 
-    if (comboBox->currentText().toStdString() == "Шифры Хилла")
+    if (comboBox->currentText().toStdString() == "Hill ciphers")
     {
         default_lines[0]->show();
         default_lines[1]->show();
@@ -336,7 +336,7 @@ void MainWindow::OnCipherSelected()
         hill_buttons[0]->show();
     }
 
-    if (comboBox->currentText().toStdString() == "Шифры Виженера")
+    if (comboBox->currentText().toStdString() == "Vigenere ciphers")
     {
         default_lines[0]->show();
         default_lines[1]->show();
@@ -356,7 +356,7 @@ void MainWindow::OnCipherSelected()
         vigenere_lines[0]->setText("a");
     }
 
-    if (comboBox->currentText().toStdString() == "Шифры Магма")
+    if (comboBox->currentText().toStdString() == "Magma ciphers")
     {
         default_lines[0]->hide();
         default_lines[1]->hide();
@@ -371,7 +371,7 @@ void MainWindow::OnCipherSelected()
             otherLine->clear();
             otherLine->hide();
         }
-        if (lastClickedButton->text().toStdString() == "Простой замены")
+        if (lastClickedButton->text().toStdString() == "Magma cipher")
         {
             for (int i{0}; i<2; i++)
             {
@@ -379,7 +379,7 @@ void MainWindow::OnCipherSelected()
                 magma_lines[i]->show();
             }
         }
-        if (lastClickedButton->text().toStdString() == "Гаммирования")
+        if (lastClickedButton->text().toStdString() == "Gamma")
         {
             for (int i{0}; i<3; i++)
             {
@@ -387,7 +387,7 @@ void MainWindow::OnCipherSelected()
                 magma_lines[i]->show();
             }
         }
-        if (lastClickedButton->text().toStdString() == "Гаммирования с обратной связью")
+        if (lastClickedButton->text().toStdString() == "Feedback gamma")
         {
             for (int i{0}; i<3; i++)
             {
@@ -409,7 +409,7 @@ std::vector<std::vector<int>> MainWindow::OnSizeEntered()
     }
     else
     {
-        if (lastClickedButton->text().toStdString() == "Шифр Хилла")
+        if (lastClickedButton->text().toStdString() == "Hill cipher")
         {
             hill_labels[1]->show();
             for (int i{0}; i<200; i++)
@@ -428,7 +428,7 @@ std::vector<std::vector<int>> MainWindow::OnSizeEntered()
                 cells.push_back(stroke);
             }
         }
-        if (lastClickedButton->text().toStdString() == "Рекуррентный шифр Хилла")
+        if (lastClickedButton->text().toStdString() == "Recurrent Hill cipher")
         {
             hill_labels[1]->show();
             hill_labels[2]->show();
@@ -498,14 +498,14 @@ void MainWindow::OnEncryptButtonClicked()
         //    throw input_data_invalid("Не введен алфавит");
         //}
 
-        if (comboBox->currentText().toStdString() == "Афинные шифры")
+        if (comboBox->currentText().toStdString() == "Affine ciphers")
         {
-            if (lastClickedButton->text().toStdString() == "Шифр простой замены")
+            if (lastClickedButton->text().toStdString() == "Simple replacement")
             {
                 std::string key = replacement_Line->text().toStdString();
                 outputLine->setText(QString::fromStdString(simple_replacement_encryption(inputText.toStdString(), key, alphabet)));
             }
-            if (lastClickedButton->text().toStdString() == "Афинный шифр")
+            if (lastClickedButton->text().toStdString() == "Affine")
             {
 
                 int alpha = alpha_1_Line->text().toInt();
@@ -517,7 +517,7 @@ void MainWindow::OnEncryptButtonClicked()
                 //}
                 outputLine->setText(QString::fromStdString(affine_encryption(inputText.toStdString(), key, alphabet)));
             }
-            if (lastClickedButton->text().toStdString() == "Афинный рекуррентный шифр")
+            if (lastClickedButton->text().toStdString() == "Recurrent affine")
             {
                 int alpha_1 = alpha_1_Line->text().toInt();
                 int beta_1 = beta_1_Line->text().toInt();
@@ -532,28 +532,28 @@ void MainWindow::OnEncryptButtonClicked()
             }
         }
 
-        if (comboBox->currentText().toStdString() == "Шифры Виженера")
+        if (comboBox->currentText().toStdString() == "Vigenere ciphers")
         {
-            if (lastClickedButton->text().toStdString() == "С коротким лозунгом")
+            if (lastClickedButton->text().toStdString() == "Repeat key")
             {
                 std::string key{vigenere_Line->text().toStdString()};
                 outputLine->setText(QString::fromStdString(repeat_key_ciphering(inputText.toStdString(), key, alphabet)));
             }
-            if (lastClickedButton->text().toStdString() == "С самоключом по открытому тексту")
+            if (lastClickedButton->text().toStdString() == "Open key")
             {
                 std::string key{vigenere_Line->text().toStdString()};
                 outputLine->setText(QString::fromStdString(self_open_key_ciphering(inputText.toStdString(), key, alphabet)));
             }
-            if (lastClickedButton->text().toStdString() == "С самоключом по шифртексту")
+            if (lastClickedButton->text().toStdString() == "Self cipher key")
             {
                 std::string key{vigenere_Line->text().toStdString()};
                 outputLine->setText(QString::fromStdString(self_cipher_key_ciphering(inputText.toStdString(), key, alphabet)));
             }
         }
 
-        if (comboBox->currentText().toStdString() == "Шифры Хилла")
+        if (comboBox->currentText().toStdString() == "Hill ciphers")
         {
-            if (lastClickedButton->text().toStdString() == "Шифр Хилла")
+            if (lastClickedButton->text().toStdString() == "Hill cipher")
             {
                 std::vector<std::vector<int>> cells = OnSizeEntered();
                 int n = cells.size();
@@ -571,7 +571,7 @@ void MainWindow::OnEncryptButtonClicked()
                 Matrix_class Key1(key_matrix, n, n);
                 outputLine->setText(QString::fromStdString(Hill_cipher_encoder(alphabet, inputText.toStdString(), Key1)));
             }
-            if (lastClickedButton->text().toStdString() == "Рекуррентный шифр Хилла")
+            if (lastClickedButton->text().toStdString() == "Recurrent Hill cipher")
             {
                 std::vector<std::vector<int>> cells = OnSizeEntered();
                 int n = cells.size();
@@ -597,16 +597,16 @@ void MainWindow::OnEncryptButtonClicked()
             }
         }
 
-        if (comboBox->currentText().toStdString() == "Шифры Магма")
+        if (comboBox->currentText().toStdString() == "Magma ciphers")
         {
-            if (lastClickedButton->text().toStdString() == "Простой замены")
+            if (lastClickedButton->text().toStdString() == "Magma cipher")
             {
                 std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
                 std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
                 std::string result = vectorToHexString(magmaEncrypt(data, key));
                 outputLine->setText(QString::fromStdString(result));
             }
-            if (lastClickedButton->text().toStdString() == "Гаммирования")
+            if (lastClickedButton->text().toStdString() == "Gamma")
             {
                 std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
                 std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
@@ -614,7 +614,7 @@ void MainWindow::OnEncryptButtonClicked()
                 std::string result = vectorToHexString(magmaGammaEncrypt(data, key, synchrolink));
                 outputLine->setText(QString::fromStdString(result));
             }
-            if (lastClickedButton->text().toStdString() == "Гаммирования с обратной связью")
+            if (lastClickedButton->text().toStdString() == "Feedback gamma")
             {
                 std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
                 std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
@@ -649,14 +649,14 @@ void MainWindow::OnDecryptButtonClicked()
         //    throw input_data_invalid("Не введен алфавит");
         //}
 
-        if (comboBox->currentText().toStdString() == "Афинные шифры")
+        if (comboBox->currentText().toStdString() == "Affine ciphers")
         {
-            if (lastClickedButton->text().toStdString() == "Шифр простой замены")
+            if (lastClickedButton->text().toStdString() == "Simple replacement")
             {
                 std::string key = replacement_Line->text().toStdString();
                 outputLine->setText(QString::fromStdString(simple_replacement_decryption(inputText.toStdString(), key, alphabet)));
             }
-            if (lastClickedButton->text().toStdString() == "Афинный шифр")
+            if (lastClickedButton->text().toStdString() == "Affine")
             {
 
                 int alpha = alpha_1_Line->text().toInt();
@@ -668,7 +668,7 @@ void MainWindow::OnDecryptButtonClicked()
                 //}
                 outputLine->setText(QString::fromStdString(affine_decryption(inputText.toStdString(), key, alphabet)));
             }
-            if (lastClickedButton->text().toStdString() == "Афинный рекуррентный шифр")
+            if (lastClickedButton->text().toStdString() == "Recurrent affine")
             {
                 int alpha_1 = alpha_1_Line->text().toInt();
                 int beta_1 = beta_1_Line->text().toInt();
@@ -683,28 +683,28 @@ void MainWindow::OnDecryptButtonClicked()
             }
         }
 
-        if (comboBox->currentText().toStdString() == "Шифры Виженера")
+        if (comboBox->currentText().toStdString() == "Vigenere ciphers")
         {
-            if (lastClickedButton->text().toStdString() == "С коротким лозунгом")
+            if (lastClickedButton->text().toStdString() == "Repeat key")
             {
                 std::string key{vigenere_Line->text().toStdString()};
                 outputLine->setText(QString::fromStdString(repeat_key_deciphering(inputText.toStdString(), key, alphabet)));
             }
-            if (lastClickedButton->text().toStdString() == "С самоключом по открытому тексту")
+            if (lastClickedButton->text().toStdString() == "Open key")
             {
                 std::string key{vigenere_Line->text().toStdString()};
                 outputLine->setText(QString::fromStdString(self_open_key_deciphering(inputText.toStdString(), key, alphabet)));
             }
-            if (lastClickedButton->text().toStdString() == "С самоключом по шифртексту")
+            if (lastClickedButton->text().toStdString() == "Self cipher key")
             {
                 std::string key{vigenere_Line->text().toStdString()};
                 outputLine->setText(QString::fromStdString(self_cipher_key_deciphering(inputText.toStdString(), key, alphabet)));
             }
         }
 
-        if (comboBox->currentText().toStdString() == "Шифры Хилла")
+        if (comboBox->currentText().toStdString() == "Hill ciphers")
         {
-            if (lastClickedButton->text().toStdString() == "Шифр Хилла")
+            if (lastClickedButton->text().toStdString() == "Hill cipher")
             {
                 std::vector<std::vector<int>> cells = OnSizeEntered();
                 int n = cells.size();
@@ -725,7 +725,7 @@ void MainWindow::OnDecryptButtonClicked()
                 outputLine->setText(QString::fromStdString(Hill_cipher_decoder(alphabet, inputText.toStdString(), Key1)));
                 //outputLine->setText(QString::fromStdString(str));
             }
-            if (lastClickedButton->text().toStdString() == "Рекуррентный шифр Хилла")
+            if (lastClickedButton->text().toStdString() == "Recurrent Hill cipher")
             {
                 std::vector<std::vector<int>> cells = OnSizeEntered();
                 int n = cells.size();
@@ -751,16 +751,16 @@ void MainWindow::OnDecryptButtonClicked()
             }
         }
 
-        if (comboBox->currentText().toStdString() == "Шифры Магма")
+        if (comboBox->currentText().toStdString() == "Magma ciphers")
         {
-            if (lastClickedButton->text().toStdString() == "Простой замены")
+            if (lastClickedButton->text().toStdString() == "Magma cipher")
             {
                 std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
                 std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
                 std::string result = vectorToHexString(magmaDecrypt(data, key));
                 outputLine->setText(QString::fromStdString(result));
             }
-            if (lastClickedButton->text().toStdString() == "Гаммирования")
+            if (lastClickedButton->text().toStdString() == "Gamma")
             {
                 std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
                 std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());
@@ -768,7 +768,7 @@ void MainWindow::OnDecryptButtonClicked()
                 std::string result = vectorToHexString(magmaGammaDecrypt(data, key, synchrolink));
                 outputLine->setText(QString::fromStdString(result));
             }
-            if (lastClickedButton->text().toStdString() == "Гаммирования с обратной связью")
+            if (lastClickedButton->text().toStdString() == "Feedback gamma")
             {
                 std::vector<uint8_t> data = hexStringToVector(magma_lines[0]->text().toStdString());
                 std::vector<uint8_t> key = hexStringToVector(magma_lines[1]->text().toStdString());

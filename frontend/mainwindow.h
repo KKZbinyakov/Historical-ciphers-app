@@ -87,10 +87,10 @@ private:
     QLineEdit *synchrolink_Line;
 
     std::map<std::string, std::vector<std::string>> cipher_types = {
-        {"Афинные шифры", {"Шифр простой замены", "Афинный шифр", "Афинный рекуррентный шифр"}},
-        {"Шифры Хилла", {"Шифр Хилла", "Рекуррентный шифр Хилла"}},
-        {"Шифры Виженера", {"С коротким лозунгом", "С самоключом по открытому тексту",  "С самоключом по шифртексту"}},
-        {"Шифры Магма", {"Простой замены", "Гаммирования", "Гаммирования с обратной связью"}}
+        {"Affine ciphers", {"Simple replacement", "Affine", "Recurrent affine"}},
+        {"Hill ciphers", {"Hill cipher", "Recurrent Hill cipher"}},
+        {"Vigenere ciphers", {"Repeat key", "Open key",  "Self cipher key"}},
+        {"Magma ciphers", {"Magma cipher", "Gamma", "Feedback gamma"}}
     };
     QPushButton *lastClickedButton = nullptr;
 };
