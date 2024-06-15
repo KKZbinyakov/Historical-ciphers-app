@@ -17,6 +17,18 @@
 #include "magma_cipher.hpp"
 #include "exceptions.hpp"
 
+/**
+*
+* \file mainwindow.h
+* This file contains header
+*
+*/
+
+/**
+*
+* MainWindow This class give access to all windows elements
+*
+*/
 class MainWindow : public QWidget
 {
     Q_OBJECT

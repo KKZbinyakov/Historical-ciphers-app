@@ -1,5 +1,19 @@
 #include "mainwindow.h"
 
+/**
+*
+* Functions.cpp
+* Contains all frontend functions
+*
+*/
+
+/**
+*
+* \param[in] hexString take hex string
+*
+* \return result result of hexStringToVector function
+*
+*/
 std::vector<uint8_t> hexStringToVector(const std::string& hexString)
 {
     std::vector<uint8_t> result;
@@ -11,6 +25,15 @@ std::vector<uint8_t> hexStringToVector(const std::string& hexString)
     return result;
 }
 
+/**
+*
+* make vector to hex string
+*
+* \param[in] vector used vector
+*
+* \return result of transformation
+*
+*/
 std::string vectorToHexString(std::vector<uint8_t> vector)
 {
     std::ostringstream line;
@@ -28,6 +51,13 @@ std::string vectorToHexString(std::vector<uint8_t> vector)
     return result;
 }
 
+/**
+*
+* MainWindow constructor
+*
+* \param[in] parent
+*
+*/
 MainWindow::MainWindow(QWidget *parent)
     : QWidget(parent)
 {
@@ -197,6 +227,11 @@ MainWindow::MainWindow(QWidget *parent)
     layout->addWidget(outputLine, 10, 0, 1, 1);
 }
 
+/**
+*
+* \param[in] index used index
+*
+*/
 void MainWindow::OnComboBoxChanged(int index)
 {
     int count = comboBox->currentData().toInt();
@@ -251,6 +286,11 @@ void MainWindow::OnComboBoxChanged(int index)
     }
 }
 
+/**
+*
+* Function for choosing cipher
+*
+*/
 void MainWindow::OnCipherSelected()
 {
     outputLine->clear();
@@ -398,6 +438,14 @@ void MainWindow::OnCipherSelected()
     }
 }
 
+/**
+*
+* Function for outputting matrix
+*
+* \throw "The key matrix is too big" if key matrix is too big
+* \return cells cells for inputting
+*
+*/
 std::vector<std::vector<int>> MainWindow::OnSizeEntered()
 {
     std::vector<std::vector<int>> cells;
@@ -479,6 +527,11 @@ std::vector<std::vector<int>> MainWindow::OnSizeEntered()
     //return data;
 //}
 
+/**
+*
+* Function for work with Encrypt button
+*
+*/
 void MainWindow::OnEncryptButtonClicked()
 {
     QString inputText = inputLine->text();
@@ -630,6 +683,11 @@ void MainWindow::OnEncryptButtonClicked()
     }
 }
 
+/**
+*
+* Function for work with decryption button
+*
+*/
 void MainWindow::OnDecryptButtonClicked()
 {
     QString inputText = inputLine->text();
