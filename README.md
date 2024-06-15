@@ -20,7 +20,7 @@ up-to-date documentation can be found at
 
 ## Installation
 
-For correct installation and further use of the system, access to the files of the QT module, the C++ compiler and the Cmake program is required.
+For correct installation and further use of the system, access to the files of the QT module, the C++ compiler and the Cmake program is required. Cmake Installation Instructions [here](https://cmake.org/cmake/help/book/mastering-cmake/chapter/Getting%20Started.html).
 Installation on Windows:
 On Windows, you can use one of the package managers.
 
