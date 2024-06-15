@@ -21,42 +21,42 @@ up-to-date documentation can be found at
 ## Installation
 
 For correct installation and further use of the system, access to the files of the QT module, the C++ compiler and the Cmake program is required.
-Установка на Windows:
-На Windows можно использовать один из пакетных менеджеров.
+Installation on Windows:
+On Windows, you can use one of the package managers.
 
 - vcpkg
 
-Например, установка Qt6 через менеджер vcpkg:
+For example, installing Qt6 through the vcpkg manager:
 
 ```vcpkg install qt```
 
-Установка только базового пакета
+Installing only the basic package
 
 ```vcpkg install qtbase```
 
 - MSYS2/Packman
 
-Установка Qt через MSYS с помощью пакетного менеджера packman:
+Installing Qt via MSYS using the packman package manager:
 
 ```pacman -S mingw-w64-x86_64-qt6```
 
-Только базовый пакет
+Basic package only
 
 ```pacman -S mingw-w64-x86_64-qt6-base```
 
-Установка Qt Creator
+Installing Qt Creator
 
 ```pacman -S mingw-w64-x86_64-qt-creator```
 
 - chocolatey
 
-Установка Qt6 с Qt Creator через менеджер chocolatey:
+Installing Qt6 with Qt Creator via chocolatey manager:
 
 ```choco install -y qt6-base-dev cmake qtcreator```
 
 - winget
 
-Установка Qt6 через менеджер winget:
+Installing Qt6 via the winget manager:
 
 ```winget install --id=miurahr.aqtinstall  -e```
 
