@@ -11,14 +11,14 @@
 /**
  * \file magma_cipher.hpp
  *
- * This file contains magma class with all methods, exception classes, and
+ * This file contains magma class with all methods and
  * definition all of functions
  *
  */
 
 /**
  * A class which contains parameters of magma cipher algorithm, classic S-box
- * replacement table, encryption and decryption functions, and as auxiliary
+ * replacement table, encryption and decryption functions, and auxiliary
  * functions for them
  *
  */
