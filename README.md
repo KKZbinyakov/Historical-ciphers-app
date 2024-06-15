@@ -82,7 +82,7 @@ Currently available in the Historical-ciphers-app are:
 ## How the program works.
 
 - At the very beginning, the user is presented with a choice of the cipher he wants to use:
-![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
+![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/begin_interface.jpg?raw=true)
 - Next, the user selects the type of cipher that he wants to use (or the mode of operation for the gamma cipher):
 ![Netu kartinki](https://github.com/KKZbiniakov/Historical-ciphers-app/blob/main/pics/img-53391-15897027866640.jpg?raw=true)
 - For a simple substitution cipher, the user enters the alphabet, a permutation of the alphabet, and the text he wants to encrypt/decrypt. At the exit, the user receives an encrypted/decrypted text:
