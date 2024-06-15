@@ -36,7 +36,7 @@ Installing only the basic package
 
 - MSYS2/Packman
 
-Installing Qt via MSYS using the packman package manager:
+Installing Qt via MSYS using the pacman package manager:
 
 ```pacman -S mingw-w64-x86_64-qt6```
 
