@@ -2,9 +2,9 @@
 
 /**
  *
- * Historical_ciphers_app.cpp
+ * \file Historical_ciphers_app.cpp
  *
- * contains main function
+ * This file contains the main function
  *
  */
 

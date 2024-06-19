@@ -16,6 +16,7 @@
 #include <map>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 /**
  *
@@ -59,6 +60,7 @@ private:
   QPushButton *encryptButton;
   QPushButton *decryptButton;
   QPushButton *fileButton;
+  QMessageBox *errorBox;
 
   QVector<QLabel *> affine_labels;
   QVector<QLineEdit *> affine_lines;

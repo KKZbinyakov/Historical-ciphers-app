@@ -1,0 +1,71 @@
+\doxysection{mainwindow.\+h File Reference}
+\hypertarget{mainwindow_8h}{}\label{mainwindow_8h}\index{mainwindow.h@{mainwindow.h}}
+{\ttfamily \#include "{}Affine\+\_\+ciphers.\+hpp"{}}\newline
+{\ttfamily \#include "{}Hill\+\_\+encoder.\+hpp"{}}\newline
+{\ttfamily \#include "{}exceptions.\+hpp"{}}\newline
+{\ttfamily \#include "{}magma\+\_\+cipher.\+hpp"{}}\newline
+{\ttfamily \#include "{}vigenere\+\_\+ciphers.\+hpp"{}}\newline
+{\ttfamily \#include $<$QApplication$>$}\newline
+{\ttfamily \#include $<$QCombo\+Box$>$}\newline
+{\ttfamily \#include $<$QFile$>$}\newline
+{\ttfamily \#include $<$QGrid\+Layout$>$}\newline
+{\ttfamily \#include $<$QLabel$>$}\newline
+{\ttfamily \#include $<$QLine\+Edit$>$}\newline
+{\ttfamily \#include $<$QMessage\+Box$>$}\newline
+{\ttfamily \#include $<$QPush\+Button$>$}\newline
+{\ttfamily \#include $<$QText\+Stream$>$}\newline
+{\ttfamily \#include $<$QWidget$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_main_window}{Main\+Window}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{mainwindow_8h_a32625ba3926b4ec0859cbe53d07dcf4d}{hex\+String\+To\+Vector}} (const std\+::string \&hex\+String)
+\item 
+std\+::string \mbox{\hyperlink{mainwindow_8h_a36b8425b9a09f7765f64604406abb928}{vector\+To\+Hex\+String}} (std\+::vector$<$ uint8\+\_\+t $>$ vector)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains header 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mainwindow_8h_a32625ba3926b4ec0859cbe53d07dcf4d}\label{mainwindow_8h_a32625ba3926b4ec0859cbe53d07dcf4d} 
+\index{mainwindow.h@{mainwindow.h}!hexStringToVector@{hexStringToVector}}
+\index{hexStringToVector@{hexStringToVector}!mainwindow.h@{mainwindow.h}}
+\doxysubsubsection{\texorpdfstring{hexStringToVector()}{hexStringToVector()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ hex\+String\+To\+Vector (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hex\+String }\end{DoxyParamCaption})}
+
+Function transforming hex string to vector
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em hex\+String} & transforming hex string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result result of transformation 
+\end{DoxyReturn}
+\Hypertarget{mainwindow_8h_a36b8425b9a09f7765f64604406abb928}\label{mainwindow_8h_a36b8425b9a09f7765f64604406abb928} 
+\index{mainwindow.h@{mainwindow.h}!vectorToHexString@{vectorToHexString}}
+\index{vectorToHexString@{vectorToHexString}!mainwindow.h@{mainwindow.h}}
+\doxysubsubsection{\texorpdfstring{vectorToHexString()}{vectorToHexString()}}
+{\footnotesize\ttfamily std\+::string vector\+To\+Hex\+String (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$}]{vector }\end{DoxyParamCaption})}
+
+Function transforming vector to hex string
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vector} & transforming vector\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of transformation 
+\end{DoxyReturn}
