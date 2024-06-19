@@ -21,7 +21,7 @@
 \DoxyCodeLine{00032\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_magma_a0fafebc5c7754b775600d0b1730021d8}{NUM\_ROUNDS}}\ =}
 \DoxyCodeLine{00033\ \ \ \ \ \ \ 32;\ }
 \DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ =}
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ =}
 \DoxyCodeLine{00037\ \ \ \ \ \ \ std::array<uint8\_t,\ BLOCK\_SIZE>;\ }
 \DoxyCodeLine{00039\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{class_magma_a1ed07f076b6f7e2df286da03656a40c6}{Key}}\ =\ std::array<uint8\_t,\ KEY\_SIZE>;\ }
 \DoxyCodeLine{00041\ }
@@ -69,7 +69,7 @@
 \DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordflow}{return}\ (temp\ <<\ 11)\ |\ (temp\ >>\ (32\ -\/\ 11));\ \textcolor{comment}{//\ left\ rotation\ by\ 11\ bits}}
 \DoxyCodeLine{00106\ \ \ \}}
 \DoxyCodeLine{00107\ }
-\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ encryptBlock(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ \&block)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00116\ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ encryptBlock(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ \&block)\textcolor{keyword}{\ const\ }\{}
 \DoxyCodeLine{00117\ \ \ \ \ uint32\_t\ left\ =}
 \DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ (block[0]\ <<\ 24)\ |\ (block[1]\ <<\ 16)\ |\ (block[2]\ <<\ 8)\ |\ block[3];}
 \DoxyCodeLine{00119\ \ \ \ \ uint32\_t\ right\ =}
@@ -81,7 +81,7 @@
 \DoxyCodeLine{00125\ \ \ \ \ \ \ left\ =\ temp;}
 \DoxyCodeLine{00126\ \ \ \ \ \}}
 \DoxyCodeLine{00127\ }
-\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ encryptedBlock\ =\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ encryptedBlock\ =\ \{}
 \DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(right\ >>\ 24),\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(right\ >>\ 16),}
 \DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(right\ >>\ 8),\ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(right),}
 \DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(left\ >>\ 24),\ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(left\ >>\ 16),}
@@ -89,7 +89,7 @@
 \DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{return}\ encryptedBlock;}
 \DoxyCodeLine{00134\ \ \ \}}
 \DoxyCodeLine{00135\ }
-\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ decryptBlock(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ \&block)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ decryptBlock(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ \&block)\textcolor{keyword}{\ const\ }\{}
 \DoxyCodeLine{00145\ \ \ \ \ uint32\_t\ left\ =}
 \DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ (block[0]\ <<\ 24)\ |\ (block[1]\ <<\ 16)\ |\ (block[2]\ <<\ 8)\ |\ block[3];}
 \DoxyCodeLine{00147\ \ \ \ \ uint32\_t\ right\ =}
@@ -101,7 +101,7 @@
 \DoxyCodeLine{00153\ \ \ \ \ \ \ left\ =\ temp;}
 \DoxyCodeLine{00154\ \ \ \ \ \}}
 \DoxyCodeLine{00155\ }
-\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ decryptedBlock\ =\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ decryptedBlock\ =\ \{}
 \DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(right\ >>\ 24),\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(right\ >>\ 16),}
 \DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(right\ >>\ 8),\ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(right),}
 \DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(left\ >>\ 24),\ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(left\ >>\ 16),}
@@ -109,10 +109,10 @@
 \DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{return}\ decryptedBlock;}
 \DoxyCodeLine{00162\ \ \ \}}
 \DoxyCodeLine{00163\ }
-\DoxyCodeLine{00174\ \ \ std::vector<uint8\_t>\ gammaBuilding(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ \&synchroLink,}
+\DoxyCodeLine{00174\ \ \ std::vector<uint8\_t>\ gammaBuilding(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ \&synchroLink,}
 \DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ dataSize)\ \{}
 \DoxyCodeLine{00176\ \ \ \ \ std::vector<uint8\_t>\ gamma(dataSize);}
-\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ cipheredLink\ =\ encryptBlock(synchroLink);}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ cipheredLink\ =\ encryptBlock(synchroLink);}
 \DoxyCodeLine{00178\ \ \ \ \ uint32\_t\ N1\ =\ (synchroLink[0]\ <<\ 24)\ |\ (synchroLink[1]\ <<\ 16)\ |}
 \DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (synchroLink[2]\ <<\ 8)\ |\ synchroLink[3];}
 \DoxyCodeLine{00180\ \ \ \ \ uint32\_t\ N2\ =\ (synchroLink[4]\ <<\ 24)\ |\ (synchroLink[5]\ <<\ 16)\ |}
@@ -126,12 +126,12 @@
 \DoxyCodeLine{00188\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
 \DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ N4\ +=\ 0x1010104;}
 \DoxyCodeLine{00190\ }
-\DoxyCodeLine{00191\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ block\ =\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ block\ =\ \{}
 \DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N4\ >>\ 24),\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N4\ >>\ 16),}
 \DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N4\ >>\ 8),\ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N4),}
 \DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N3\ >>\ 24),\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N3\ >>\ 16),}
 \DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N3\ >>\ 8),\ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N3)\};}
-\DoxyCodeLine{00196\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ gammaBlock\ =\ encryptBlock(block);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ gammaBlock\ =\ encryptBlock(block);}
 \DoxyCodeLine{00197\ }
 \DoxyCodeLine{00198\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 8;\ ++j)\ \{}
 \DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ gamma[i\ +\ j]\ =\ gammaBlock[j];}
@@ -142,7 +142,7 @@
 \DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{return}\ gamma;}
 \DoxyCodeLine{00205\ \ \ \}}
 \DoxyCodeLine{00206\ }
-\DoxyCodeLine{00218\ \ \ std::vector<uint8\_t>\ feedbackGammaBuilding(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ \&synchroLink,}
+\DoxyCodeLine{00218\ \ \ std::vector<uint8\_t>\ feedbackGammaBuilding(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ \&synchroLink,}
 \DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<uint8\_t>\ \&data)\ \{}
 \DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ dataSize\ =\ data.size();}
 \DoxyCodeLine{00221\ \ \ \ \ std::vector<uint8\_t>\ gamma(dataSize);}
@@ -151,12 +151,12 @@
 \DoxyCodeLine{00224\ \ \ \ \ uint32\_t\ N2\ =\ (synchroLink[4]\ <<\ 24)\ |\ (synchroLink[5]\ <<\ 16)\ |}
 \DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (synchroLink[6]\ <<\ 8)\ |\ synchroLink[7];}
 \DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ dataSize\ -\/\ 7;\ i\ +=\ 8)\ \{}
-\DoxyCodeLine{00227\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ block\ =\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ block\ =\ \{}
 \DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N1\ >>\ 24),\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N1\ >>\ 16),}
 \DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N1\ >>\ 8),\ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N1),}
 \DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N2\ >>\ 24),\ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N2\ >>\ 16),}
 \DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N2\ >>\ 8),\ \ \textcolor{keyword}{static\_cast<}uint8\_t\textcolor{keyword}{>}(N2)\};}
-\DoxyCodeLine{00232\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ gammaBlock\ =\ encryptBlock(block);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ gammaBlock\ =\ encryptBlock(block);}
 \DoxyCodeLine{00233\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ k\ =\ 0;\ k\ <\ \mbox{\hyperlink{class_magma_a49193ef749d858f60afd6150c7ea650c}{BLOCK\_SIZE}};\ ++k)\ \{}
 \DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ gamma[i\ +\ k]\ =\ data[i\ +\ k]\ \string^\ gammaBlock[k];}
 \DoxyCodeLine{00235\ \ \ \ \ \ \ \}}
@@ -197,10 +197,10 @@
 \DoxyCodeLine{00297\ \ \ \ \ std::vector<uint8\_t>\ encryptedData(paddedSize);}
 \DoxyCodeLine{00298\ }
 \DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ paddedSize;\ i\ +=\ \mbox{\hyperlink{class_magma_a49193ef749d858f60afd6150c7ea650c}{BLOCK\_SIZE}})\ \{}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ block;}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ block;}
 \DoxyCodeLine{00301\ \ \ \ \ \ \ std::copy(paddedData.begin()\ +\ i,\ paddedData.begin()\ +\ i\ +\ \mbox{\hyperlink{class_magma_a49193ef749d858f60afd6150c7ea650c}{BLOCK\_SIZE}},}
 \DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ block.begin());}
-\DoxyCodeLine{00303\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ encryptedBlock\ =\ encryptBlock(block);}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ encryptedBlock\ =\ encryptBlock(block);}
 \DoxyCodeLine{00304\ \ \ \ \ \ \ std::copy(encryptedBlock.begin(),\ encryptedBlock.end(),}
 \DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ encryptedData.begin()\ +\ i);}
 \DoxyCodeLine{00306\ \ \ \ \ \}}
@@ -213,9 +213,9 @@
 \DoxyCodeLine{00322\ \ \ \ \ std::vector<uint8\_t>\ decryptedData(dataSize);}
 \DoxyCodeLine{00323\ }
 \DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ dataSize;\ i\ +=\ \mbox{\hyperlink{class_magma_a49193ef749d858f60afd6150c7ea650c}{BLOCK\_SIZE}})\ \{}
-\DoxyCodeLine{00325\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ block;}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ block;}
 \DoxyCodeLine{00326\ \ \ \ \ \ \ std::copy(data.begin()\ +\ i,\ data.begin()\ +\ i\ +\ \mbox{\hyperlink{class_magma_a49193ef749d858f60afd6150c7ea650c}{BLOCK\_SIZE}},\ block.begin());}
-\DoxyCodeLine{00327\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ decryptedBlock\ =\ decryptBlock(block);}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ decryptedBlock\ =\ decryptBlock(block);}
 \DoxyCodeLine{00328\ \ \ \ \ \ \ std::copy(decryptedBlock.begin(),\ decryptedBlock.end(),}
 \DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ decryptedData.begin()\ +\ i);}
 \DoxyCodeLine{00330\ \ \ \ \ \}}
@@ -224,7 +224,7 @@
 \DoxyCodeLine{00333\ \ \ \}}
 \DoxyCodeLine{00334\ }
 \DoxyCodeLine{00347\ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{class_magma_a0131d0b6e56c3cdabae2e46510d90e27}{gammaAlgorithm}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\ \&data,}
-\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ \&synchroLink)\ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ \&synchroLink)\ \{}
 \DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ dataSize\ =\ data.size();}
 \DoxyCodeLine{00350\ \ \ \ \ std::vector<uint8\_t>\ gamma\ =\ gammaBuilding(synchroLink,\ dataSize);}
 \DoxyCodeLine{00351\ \ \ \ \ std::vector<uint8\_t>\ encryptedData(dataSize);}
@@ -235,7 +235,7 @@
 \DoxyCodeLine{00356\ \ \ \}}
 \DoxyCodeLine{00357\ }
 \DoxyCodeLine{00370\ \ \ std::vector<uint8\_t>\ \mbox{\hyperlink{class_magma_a07f0db07d4540e669ef8c91e9ba5c3bc}{feedbackGammaAlgorithm}}(\textcolor{keyword}{const}\ std::vector<uint8\_t>\ \&data,}
-\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}\ \&synchroLink)\ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}}\ \&synchroLink)\ \{}
 \DoxyCodeLine{00372\ \ \ \ \ std::vector<uint8\_t>\ gamma\ =\ feedbackGammaBuilding(synchroLink,\ data);}
 \DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordflow}{return}\ gamma;}
 \DoxyCodeLine{00374\ \ \ \}}

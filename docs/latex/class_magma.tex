@@ -7,9 +7,9 @@
 \doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}}
+using \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}} = std\+::array$<$ uint8\+\_\+t, \mbox{\hyperlink{class_magma_a49193ef749d858f60afd6150c7ea650c}{BLOCK\+\_\+\+SIZE}} $>$
 \item 
-using \mbox{\hyperlink{class_magma_a1ed07f076b6f7e2df286da03656a40c6}{Key}} = std\+::array$<$uint8\+\_\+t, \mbox{\hyperlink{class_magma_af54c7f0c36404b3326216e6821182c2e}{KEY\+\_\+\+SIZE}}$>$
+using \mbox{\hyperlink{class_magma_a1ed07f076b6f7e2df286da03656a40c6}{Key}} = std\+::array$<$ uint8\+\_\+t, \mbox{\hyperlink{class_magma_af54c7f0c36404b3326216e6821182c2e}{KEY\+\_\+\+SIZE}} $>$
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -24,9 +24,9 @@ std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_magma_a4a28b21b544b9144
 \item 
 std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_magma_ae4462f1e50180d603bb874d801ce4304}{decrypt}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data) const
 \item 
-std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_magma_a0131d0b6e56c3cdabae2e46510d90e27}{gamma\+Algorithm}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}} \&synchro\+Link)
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_magma_a0131d0b6e56c3cdabae2e46510d90e27}{gamma\+Algorithm}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}} \&synchro\+Link)
 \item 
-std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_magma_a07f0db07d4540e669ef8c91e9ba5c3bc}{feedback\+Gamma\+Algorithm}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}} \&synchro\+Link)
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{class_magma_a07f0db07d4540e669ef8c91e9ba5c3bc}{feedback\+Gamma\+Algorithm}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&data, const \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}} \&synchro\+Link)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -43,23 +43,17 @@ static const size\+\_\+t \mbox{\hyperlink{class_magma_a0fafebc5c7754b775600d0b17
 A class which contains parameters of magma cipher algorithm, classic S-\/box replacement table, encryption and decryption functions, and auxiliary functions for them 
 
 \doxysubsection{Member Typedef Documentation}
-\Hypertarget{class_magma_a5f044b8387999178a1e380d035eeaf0b}\label{class_magma_a5f044b8387999178a1e380d035eeaf0b} 
+\Hypertarget{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}\label{class_magma_a3f04af8f4f2658ff405e2d40ff88f972} 
 \index{Magma@{Magma}!Block@{Block}}
 \index{Block@{Block}!Magma@{Magma}}
 \doxysubsubsection{\texorpdfstring{Block}{Block}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Magma\+::\+Block}}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Magma\+::\+Block}} =  std\+::array$<$uint8\+\_\+t, \mbox{\hyperlink{class_magma_a49193ef749d858f60afd6150c7ea650c}{BLOCK\+\_\+\+SIZE}}$>$}
 
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{}
-\DoxyCodeLine{\ \ \ \ \ \ std::array<uint8\_t,\ BLOCK\_SIZE>}
-
-\end{DoxyCode}
 Block is class object alias for array of uint8 numbers \Hypertarget{class_magma_a1ed07f076b6f7e2df286da03656a40c6}\label{class_magma_a1ed07f076b6f7e2df286da03656a40c6} 
 \index{Magma@{Magma}!Key@{Key}}
 \index{Key@{Key}!Magma@{Magma}}
 \doxysubsubsection{\texorpdfstring{Key}{Key}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{class_magma_a1ed07f076b6f7e2df286da03656a40c6}{Magma\+::\+Key}} = std\+::array$<$uint8\+\_\+t, \mbox{\hyperlink{class_magma_af54c7f0c36404b3326216e6821182c2e}{KEY\+\_\+\+SIZE}}$>$}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_magma_a1ed07f076b6f7e2df286da03656a40c6}{Magma\+::\+Key}} =  std\+::array$<$uint8\+\_\+t, \mbox{\hyperlink{class_magma_af54c7f0c36404b3326216e6821182c2e}{KEY\+\_\+\+SIZE}}$>$}
 
 Key is class object alias for array of uint8 numbers 
 
@@ -116,7 +110,7 @@ encrypted data
 \index{Magma@{Magma}!feedbackGammaAlgorithm@{feedbackGammaAlgorithm}}
 \index{feedbackGammaAlgorithm@{feedbackGammaAlgorithm}!Magma@{Magma}}
 \doxysubsubsection{\texorpdfstring{feedbackGammaAlgorithm()}{feedbackGammaAlgorithm()}}
-{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ Magma\+::feedback\+Gamma\+Algorithm (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}} \&}]{synchro\+Link }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ Magma\+::feedback\+Gamma\+Algorithm (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}} \&}]{synchro\+Link }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 The method performs data encryption and decryption using magma feedback gamming replacement algorithm. Addition modulo two is applied between each block of data and pre-\/calculated gamma
 
@@ -134,7 +128,7 @@ encrypted data
 \index{Magma@{Magma}!gammaAlgorithm@{gammaAlgorithm}}
 \index{gammaAlgorithm@{gammaAlgorithm}!Magma@{Magma}}
 \doxysubsubsection{\texorpdfstring{gammaAlgorithm()}{gammaAlgorithm()}}
-{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ Magma\+::gamma\+Algorithm (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const \mbox{\hyperlink{class_magma_a5f044b8387999178a1e380d035eeaf0b}{Block}} \&}]{synchro\+Link }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ Magma\+::gamma\+Algorithm (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{data,  }\item[{const \mbox{\hyperlink{class_magma_a3f04af8f4f2658ff405e2d40ff88f972}{Block}} \&}]{synchro\+Link }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 The method performs data encryption and decryption using magma gamming replacement algorithm. Addition modulo two is applied between each block of data and pre-\/calculated gamma
 
